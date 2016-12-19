@@ -32,13 +32,15 @@ if (!$db_selected) {
 
 mysql_set_charset('utf8');
 
-$result = mysql_query('SELECT item_name, item_id, item_image1 FROM item');
+$result = mysql_query('SELECT item_name, item_id, item_image1 FROM item LIMIT 0, 10');
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
 }
+for ($i = 0; $i < 10; $i++) {
+	while ($row = mysql_fetch_assoc($result)) {
 
-while ($row = mysql_fetch_assoc($result)) {
-	print'<li><a href="detail.php?item_id='.$row['item_id'].'"><img src="/media/'.$row['item_image1'].'"></a></li>';
+		print'<li><a href="detail.php?item_id='.$row['item_id'].'"><img src="/media/'.$row['item_image1'].'"></a></li>';
+	}
 }
 
 ?>
@@ -59,7 +61,7 @@ if (!$db_selected) {
 
 mysql_set_charset('utf8');
 
-$result = mysql_query('SELECT `item_brand` FROM `item`');
+$result = mysql_query('SELECT `item_brand` FROM `item` LIMIT 0, 6');
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
 }
@@ -92,7 +94,7 @@ if (!$result) {
 while ($row = mysql_fetch_assoc($result)) {
 	print'<li>
             <div class="recommenduser clearfix">
-            <div class="img-box"><img src="/user_media/'.$row['user_image'].'"　 height="280"></div>
+            <div class="img-box"><img src="/user_media/'.$row['user_image'].'"　 height="240"></div>
             <div class="text-box"><a href="userpage.php?user_id='.$row['user_id'].' ">'.$row['user_nickname'].'</a></div>
             </div>
             </li>';

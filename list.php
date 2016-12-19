@@ -8,18 +8,18 @@ $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
 	die('接続失敗です。'.mysql_error());
 }
-print'<li>'.$_GET[first_category].'</li>';
-print'<li>'.$_GET[second_category].'</li>';
-print'<li>'.$_GET[third_category].'</li>'
+print'<li>'.$_GET[select_word].'</li>';
+print'<li>'.$_GET[select_word].'</li>';
+print'<li>'.$_GET[select_word].'</li>'
 ?>
         </ul>
     </div>
 </div> <!-- middle -->
 
 <div class="list-content arrow-width">
-    <h2><span><?php print$_GET[first_category];
-print$_GET[second_category];
-print$_GET[third_category]?>一覧</span></h2>
+    <h2><span><?php print$_GET[select_word];
+print$_GET[select_word];
+print$_GET[select_word]?>一覧</span></h2>
     <ul class="clearfix">
 <?php
 
@@ -30,7 +30,7 @@ if (!$db_selected) {
 
 mysql_set_charset('utf8');
 
-$result = mysql_query('SELECT item_id, item_image1 FROM item WHERE LIKE `first_category` =".$_GET[first_category]"');
+$result = mysql_query("SELECT * FROM item WHERE `first_category` =".$_GET[select_word]);
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
 }

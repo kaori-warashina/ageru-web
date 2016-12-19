@@ -94,5 +94,16 @@ $(function() {
 	$(window).resize(function() {
 		$('.match-height').matchHeight();
 	});
+	
+	
+	
+	/*-----add 20161216-----*/
+	$('.alert .close').on('click', function() {
+		$(this).parent().parent().fadeOut();
+	});
+	
+	$('button.check.address').on('click', function() {
+		$(this).next().slideToggle();
+	});
 
 });

@@ -1983,3 +1983,135 @@ select::-ms-expand { /* IE用 */
 		padding: 12px;
 	}
 }
+
+
+
+/*-----add 20161216-----*/
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	margin-bottom: 188px;
+}
+.co-p {
+	text-align: center;
+	padding: 50px 0 0;
+	font-size: 14px;
+}
+.confirm .register-content {
+	margin-top: 20px;
+}
+.form-register.confirm th {
+	width: 200px;
+	padding-right: 15px;
+}
+.form-register.confirm td {
+	padding: 10px 0;
+	width: auto;
+}
+.return-link {
+	text-align: center;
+	margin-top: 20px;
+}
+.return-link a {
+	text-decoration: underline;
+}
+.return-link.home a {
+	max-width: 300px;
+    width: 100%;
+    color: #fff;
+    background: #f0a09e;
+    border: 1px solid #f0a09e;
+    border-radius: 3px;
+    height: 45px;
+	line-height: 45px;
+    font-size: 18px;
+	display: block;
+	text-decoration: none;
+	margin: 50px auto 0;
+}
+.alert {
+	padding: 10px;
+}
+.alert .arrow-width {
+	position: relative;
+}
+.alert-success {
+	background: #F0FFF0;
+}
+.alert .close {
+	width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+	margin-top: -6px;
+    cursor: pointer;
+}
+.alert .close:before, .alert .close:after {
+	display: block;
+    content: '';
+    width: 2px;
+    height: 15px;
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #3d3842;
+    border-radius: 10px;
+    position: absolute;
+    top: -2px;
+    left: 6px;
+}
+.alert .close:after {
+	-webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.address-box {
+	/*clear: both;*/
+	/*padding: 10px 20px;*/
+	margin-top: 20px;
+	display: none;
+}
+.address-box p {
+	font-weight: normal;
+	font-size: 12px;
+	text-align: left;
+}
+footer {
+	bottom: 0;
+	height: 38px;
+	position: absolute;
+	width: 100%;
+}
+.footer-content {
+	margin-top: 0;
+}
+
+@media all and (max-width:768px) {
+	.form-register.confirm th {
+		font-weight: bold;
+	}
+}
+
+@media all and (max-width:480px) {
+	body {
+		margin-bottom: 130px;
+	}
+	.co-p {
+		padding: 30px 0 0;
+		font-size: 12px;
+	}
+	.return-link.home a {
+		max-width: 180px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 14px;
+		margin-top: 10px;
+	}
+	.address-box {
+		margin-top: 10px;
+	}
+}

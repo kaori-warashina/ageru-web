@@ -13,93 +13,99 @@ if (!$db_selected) {
 	die('データベース選択失敗です。'.mysql_error());
 }
 mysql_set_charset('utf8');
-$result = mysql_query('SELECT `item_id`, `item_brand`, `item_name`, `price`, `first_category`, `second_category`, `third_category`, `item_size`, `item_color`, `item_condition`, `item_material`, `item_image1`, `item_image2`, `item_image3`, `item_user`, `body_type`, `body_size`, `item_taste`, `item_request_flg`, `item_request_user` FROM `item` WHERE `item_id`=".$_GET[item_id]"');
+$result = mysql_query("SELECT * FROM `item` WHERE `item_id`=".$_GET[item_id]);
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
 }
 while ($row = mysql_fetch_assoc($result)) {
-	print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
-}
-?></ul>
+	echo '<li><a href="#'.$row['item_name'].'">'.$row['item_name'].'</a></li>';
 
-    </div>
-</div>
-<div class="bg-content">
-    <div class="bottom arrow-width clearfix">
-        <div class="left-bottom">
-<?php print' <img src="/media/'.$row['item_image1'].'">'?>
-        </div>
-        <div class="bottom-information">
-            <p><a href="#"><?php print$row['item_name']?></p>
-            <p><a href="#"><a href="#"><?php print$row['item_brand']?></a></p>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>カテゴリ</th>
-                        <td><a href="#"><?php print$row['first_category']?></a></td>
-                    </tr>
-                    <tr>
-                        <th>サイズ</th>
-                        <td><?php print$row['item_size']?></td>
-                    </tr>
-                    <tr>
-                        <th>購入価格</th>
-                        <td><?php print$row['price']?></td>
-                    </tr>
-                    <tr>
-                        <th>素材</th>
-                        <td><?php print$row['item_material']?></td>
-                    </tr>
-                    <tr>
-                        <th>商品状態</th>
-                        <td><?php print$row['item_condition']?></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="right-bottom">
-            <button type="button" name="button"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</button>
-        </div>
-    </div>
-</div>
+	?></ul>
 
+												    </div>
+												</div>
+	<div class="alert alert-success">
+	    <div class="arrow-width">
+	        <p>画像を投稿しました。</p>
+	        <div class="close"></div>
+	    </div>
+	</div>
+												<div class="bg-content">
+												    <div class="bottom arrow-width clearfix">
+												        <div class="left-bottom">
+	<?php echo ' <img src="/media/'.$row['item_image1'].'">'?>
+												        </div>
+												        <div class="bottom-information">
+												            <p><a href="#"><?php echo $row['item_name']?></p>
+												            <p><a href="#"><a href="#"><?php echo $row['item_brand']?></a></p>
+												            <table>
+												                <tbody>
+												                    <tr>
+												                        <th>カテゴリ</th>
+												                        <td><a href="#"><?php echo $row['first_category']?></a></td>
+												                    </tr>
+												                    <tr>
+												                        <th>サイズ</th>
+												                        <td><?php echo $row['item_size']?></td>
+												                    </tr>
+												                    <tr>
+												                        <th>購入価格</th>
+												                        <td><?php echo $row['price']?></td>
+												                    </tr>
+												                    <tr>
+												                        <th>素材</th>
+												                        <td><?php echo $row['item_material']?></td>
+												                    </tr>
+												                    <tr>
+												                        <th>商品状態</th>
+												                        <td><?php echo $row['item_condition']?></td>
+												                    </tr>
+												                </tbody>
+												            </table>
+												        </div>
+												        <div class="right-bottom">
+												            <button type="button" name="button"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</button>
+												        </div>
+												    </div>
+												</div>
 
-<div class="middle-content arrow-width">
-    <h2><span>着用画像一覧</span></h2>
-    <ul class="clearfix">
-        <li><a href="#"><?php print' <img src="/media/'.$row['item_image1'].'">'?></a></li>
-        <li><button type="button" name="button"><img src="/image/img_add.png"></button></li>
-    </ul>
-</div>
+											<div class="middle-content arrow-width">
+											    <h2><span>着用画像一覧</span></h2>
+											    <ul class="clearfix">
+											        <li><a href="#"><?php echo ' <img src="/media/'.$row['item_image1'].'">'?></a></li>
+											        <li><button type="button" name="button"><img src="/image/img_add.png"></button></li>
+											    </ul>
+											</div>
 
+	<?php }?>
 <div class="bottom-content">
     <h2><span>コメント一覧</span></h2>
 <?php
-$result = mysql_query('SELECT `comment_id`, `comment_item_id`, `comment_user`, `comment_text` FROM `comment` WHERE `comment_item_id`=".$_GET[item_id]"');
+$result = mysql_query("SELECT * FROM `comment` WHERE `comment_item_id`=".$_GET[item_id]);
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
-}
-?>
-    <div class="comment-content">
-        <div class="top-comment clearfix">
-            <div class="left">
-                <a href="#"><?php print' <img src="/user_media/'.$row['user_image'].'">'?></a>
-            </div>
-            <div class="right">
-                <a href="#"><?php print'<li><a href="#'.$row['comment_user'].'">'.$row['comment_user'].'</a></li>'?></a>
-                <p><?php print$row['comment_text']?></p>
-            </div>
-        </div> <!-- top-comment -->
+	?>
+									    <div class="comment-content">
+									        <div class="top-comment clearfix">
+									            <div class="left">
+									                <a href="#"><?php echo ' <img src="/user_media/'.$row['user_image'].'">'?></a>
+									            </div>
+									            <div class="right">
+									                <a href="#"><?php echo '<li><a href="#'.$row['comment_user'].'">'.$row['comment_user'].'</a></li>'?></a>
+									                <p><?php echo $row['comment_text']?></p>
+									            </div>
+									        </div> <!-- top-comment -->
 
-        <form class="form-block" action="index.html" method="post">
-            <div class="comment-write">
-                <p>コメントを投稿する</p>
-                <textarea name="name" rows="" cols=""></textarea>
-            </div>
-            <div class="comment-sent">
-                <button type="button" name="button">投稿する</button>
-            </div>
-        </form>
-    </div> <!-- comment-content -->
+									        <form class="form-block" action="index.html" method="post">
+									            <div class="comment-write">
+									                <p>コメントを投稿する</p>
+									                <textarea name="name" rows="" cols=""></textarea>
+									            </div>
+									            <div class="comment-sent">
+									                <button type="button" name="button">投稿する</button>
+									            </div>
+									        </form>
+									    </div> <!-- comment-content -->
+	<?php }?>
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
