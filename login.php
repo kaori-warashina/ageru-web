@@ -12,9 +12,9 @@
         <div class="login-page">
             <h2>ageruにログインする</h2>
             <form class="login" action="index.html" method="post">
-                <input type="text" name="name" placeholder="メールアドレス">
-                <input type="password" name="name" placeholder="パスワード">
-                <button type="button" name="button">ログイン</button>
+                <p>メールアドレス</p><input type="text" name="name" placeholder="メールアドレス">
+                <p>パスワード</p><input type="password" name="name" placeholder="パスワード">
+                <button type="button" name="button"><a href="index.php?user_id=4"> ログイン</a></button>
             </form>
         </div>
     </div>

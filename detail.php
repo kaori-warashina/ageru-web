@@ -1,8 +1,8 @@
 <?php include 'header.php';?>
 <div class="middle">
-    <div class="middle-guide arrow-width">
-        <ul>
-            <li><a href="index.php">ageruトップ</a></li>
+<div class="middle-guide arrow-width">
+<ul>
+<li><a href="index.php">ageruトップ</a></li>
 <?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
@@ -20,16 +20,17 @@ if (!$result) {
 while ($row = mysql_fetch_assoc($result)) {
 	echo '<li><a href="#'.$row['item_name'].'">'.$row['item_name'].'</a></li>';
 
-	?></ul>
+	?>
+	</ul>
 
 												    </div>
 												</div>
-	<div class="alert alert-success">
-	    <div class="arrow-width">
-	        <p>画像を投稿しました。</p>
-	        <div class="close"></div>
-	    </div>
-	</div>
+									<div class="alert alert-success">
+									<div class="arrow-width">
+									<p>画像を投稿しました。</p>
+									<div class="close"></div>
+									</div>
+									</div>
 												<div class="bg-content">
 												    <div class="bottom arrow-width clearfix">
 												        <div class="left-bottom">
@@ -63,8 +64,17 @@ while ($row = mysql_fetch_assoc($result)) {
 												                </tbody>
 												            </table>
 												        </div>
-												        <div class="right-bottom">
-												            <button type="button" name="button"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</button>
+				<script type="text/javascript">
+				<!--
+				var txt1 = "リクエスト中";
+
+				function ChangeTxt(txt) {
+				    document.getElementById("txt").innerHTML=txt;
+				}
+				-->
+				</script>
+												        <div class="right-bottom"><a href="javascript:void(0)" onclick="ChangeTxt(txt1); return false;">
+												            <button type="button" name="button"　onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
 												        </div>
 												    </div>
 												</div>
@@ -79,11 +89,13 @@ while ($row = mysql_fetch_assoc($result)) {
 
 	<?php }?>
 <div class="bottom-content">
-    <h2><span>コメント一覧</span></h2>
+<h2><span>コメント一覧</span></h2>
 <?php
 $result = mysql_query("SELECT * FROM `comment` WHERE `comment_item_id`=".$_GET[item_id]);
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
+}
+while ($row = mysql_fetch_assoc($result)) {
 	?>
 									    <div class="comment-content">
 									        <div class="top-comment clearfix">

@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
 <div class="middle">
     <div class="middle-guide arrow-width">
         <ul>
@@ -250,10 +250,11 @@
                     </table>
                 </div> <!-- selfinformation -->
             <div class="registration">
-                <button type="button" name="button">登録する</button>
+                <button type="button" name="button">
+                <a href="register-complete.php">登録する</a></button>
             </div>
         </div> <!-- register-content -->
     </form>
     <p class="return-link"><a href="/register.php">登録画面に戻る</a></p>
 </div> <!-- arrow-width -->
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';?>

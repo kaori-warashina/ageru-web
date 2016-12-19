@@ -410,7 +410,9 @@
             </form>
         </div> <!-- selfinformation -->
         <div class="registration">
-            <button type="button" name="button">登録する</button>
+            <button type="button" name="button">
+            <a href="register-confirm.php">
+            登録する</a></button>
         </div>
     </div> <!-- register-content -->
 </div> <!-- arrow-width -->
