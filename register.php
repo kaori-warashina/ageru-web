@@ -327,11 +327,11 @@
                                 <p>服のサイズ</p>
                             </th>
                             <td>
-                                <label><input type="checkbox" name=""> SS</label>
-                                <label><input type="checkbox" name=""> S</label>
-                                <label><input type="checkbox" name=""> M</label>
-                                <label><input type="checkbox" name=""> L</label>
-                                <label><input type="checkbox" name=""> XL</label>
+                                <label><input type="radio" name="sizeSL"> SS</label>
+                                <label><input type="radio" name="sizeSL"> S</label>
+                                <label><input type="radio" name="sizeSL"> M</label>
+                                <label><input type="radio" name="sizeSL"> L</label>
+                                <label><input type="radio" name="sizeSL"> XL</label>
                             </td>
                         </tr>
                         <tr>
@@ -339,13 +339,13 @@
                                 <p>服の号数</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="checkbox" name=""> 3号</label>
-                                <label><input type="checkbox" name=""> 5号</label>
-                                <label><input type="checkbox" name=""> 7号</label>
-                                <label><input type="checkbox" name=""> 9号</label>
-                                <label><input type="checkbox" name=""> 11号</label>
-                                <label><input type="checkbox" name=""> 13号</label>
-                                <label><input type="checkbox" name=""> その他</label>
+                                <label><input type="radio" name="size"> 3号</label>
+                                <label><input type="radio" name="size"> 5号</label>
+                                <label><input type="radio" name="size"> 7号</label>
+                                <label><input type="radio" name="size"> 9号</label>
+                                <label><input type="radio" name="size"> 11号</label>
+                                <label><input type="radio" name="size"> 13号</label>
+                                <label><input type="radio" name="size"> その他</label>
                             </td>
                         </tr>
                         <tr>
@@ -391,10 +391,10 @@
                                 <p>体型</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="checkbox" name=""> やせ型</label>
-                                <label><input type="checkbox" name=""> 標準</label>
-                                <label><input type="checkbox" name=""> ぽっちゃり</label>
-                                <label><input type="checkbox" name=""> その他</label>
+                                <label><input type="radio" name="body"> やせ型</label>
+                                <label><input type="radio" name="body"> 標準</label>
+                                <label><input type="radio" name="body"> ぽっちゃり</label>
+                                <label><input type="radio" name="body"> その他</label>
                             </td>
                         </tr>
                         <tr>

@@ -193,7 +193,7 @@
                                     <p>服のサイズ</p>
                                 </th>
                                 <td>
-                                    SS, S
+                                    SS
                                 </td>
                             </tr>
                             <tr>
@@ -201,7 +201,7 @@
                                     <p>服の号数</p>
                                 </th>
                                 <td class="label-block">
-                                    3号, 5号
+                                    3号
                                 </td>
                             </tr>
                             <tr>
@@ -233,7 +233,7 @@
                                     <p>体型</p>
                                 </th>
                                 <td class="label-block">
-                                    やせ型, 標準
+                                    やせ型
                                 </td>
                             </tr>
                             <tr>

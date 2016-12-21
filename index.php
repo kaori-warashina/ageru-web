@@ -61,15 +61,16 @@ if (!$db_selected) {
 
 mysql_set_charset('utf8');
 
-$result = mysql_query('SELECT `item_brand` FROM `item` LIMIT 0, 6');
+$result = mysql_query('SELECT DISTINCT `item_brand` FROM `item` LIMIT 0, 6');
 if (!$result) {
 	die('クエリーが失敗しました。'.mysql_error());
 }
 
 while ($row = mysql_fetch_assoc($result)) {
-	print'<li><a href="list.php?item_brand_id='.$row['item_brand'].'">'.$row['item_brand'].'</a></li>';
-}
-?>
+	?>
+		<li><a href="list.php?item_brand='<?php print$row['item_brand']?>'">
+	<?php print$row['item_brand']?></a></li>
+	<?php }?>
 </ul>
         </div> <!-- brand -->
 
