@@ -50,10 +50,10 @@ if (isset($_GET[first_category])) {
 	$result = mysql_query("SELECT * FROM `item` WHERE `first_category_id`=".$_GET[first_category]);
 }
 if (isset($_GET[second_category])) {
-	$result = mysql_query("SELECT * FROM `item` WHERE `second_category_id`=".$_GET[second_category]);
+	$result = mysql_query("SELECT * FROM `item` WHERE `first_category_id`=".$_GET[first_category]." AND `second_category_id`=".$_GET[second_category]);
 }
 if (isset($_GET[third_category])) {
-	$result = mysql_query("SELECT * FROM `item` WHERE `third_category_id`=".$_GET[third_category]);
+	$result = mysql_query("SELECT * FROM `item` WHERE `first_category_id`=".$_GET[first_category]." AND `second_category_id`=".$_GET[second_category]." AND `third_category_id`=".$_GET[third_category]);
 }
 if (isset($_GET[item_brand])) {
 	$result = mysql_query("SELECT * FROM `item` WHERE `item_brand`=".$_GET[item_brand]);
@@ -64,7 +64,7 @@ if (!$result) {
 }
 while ($row = mysql_fetch_assoc($result)) {
 	?>
-			<li><?php print' <a href="detail.php?item_id='.$row['item_id'].'">'.' <img src="/media/'.$row['item_image1'].'">'?>
+					<li><?php print' <a href="detail.php?item_id='.$row['item_id'].'">'.' <img src="/media/'.$row['item_image1'].'">'?>
 	</a></li>
 	<?php }?>
 </ul>
