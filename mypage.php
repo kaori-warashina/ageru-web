@@ -156,6 +156,46 @@ while ($row = mysql_fetch_assoc($result)) {
 	</ul>
 					</div> <!-- sending -->
 
+
+					<div class="sending request-content">
+					<h3>到着待ちの商品</h3>
+					<ul class="clearfix">
+	<?php
+	$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=5 AND `item_user`=".$_GET[user_id]);
+	if (!$result) {
+		die('クエリーが失敗しました。'.mysql_error());
+	}
+	while ($row = mysql_fetch_assoc($result)) {
+		?>
+		<li>
+										<div class="clothes-information sending-information match-height clearfix">
+										<div class="clothes-image">
+		<?php print' <img src="/media/'.$row['item_image1'].'">'?>
+										</div>
+										<div class="clothes-guid">
+										    <p data-count="12"><?php print$row['item_name']?></p>
+										    <p><a href="#"><?php print$row['item_brand']?></a></p>
+										    <div class="username-request">
+		<?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
+										        <span><?php echo '<a href="userpage.php?user_id='.$row['user_id'].'">'.$row['user_nickname'].'</a>'?></span>さん
+										    </div> <!-- username-top -->
+										    <button type="button" name="button" class="check address">発送元を確認</button>
+										        <div class="address-box">
+										            <p>〒000-0000<br>
+										                XX県XX市XX町000-00<br>
+										                名前<br>
+										                電話番号
+										            </p>
+										        </div>
+				<button type="button" name="button" class="item-information">到着通知</button>
+										</div>
+										</div> <!-- clothes-information -->
+										</li>
+		<?php }?>
+	</ul>
+					</div> <!-- sending -->
+
+
 					<div class="trading request-content">
 					<h3>過去の取引履歴</h3>
 					<ul class="clearfix">
