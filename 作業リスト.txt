@@ -13,3 +13,4 @@
 
 
 http://www.php-labo.net/tutorial/mysql/php_regist.html
+http://www.standpower.com/php_form.html
