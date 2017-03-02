@@ -15,13 +15,7 @@ $user_id = $_REQUEST['user_id'];
 $result = mysql_query("INSERT INTO comment(comment, user_id) VALUES('$comment_text', '$user_id')");
 
 if (!$result) {
-  exit('データを登録できませんでした。');
+  exit('データを登録できませんでした。'.mysql_error());
 }
-
-if (!$result) {
-die('クエリーが失敗しました。'.mysql_error());
-}
-while ($row = mysql_fetch_assoc($result)) {
-echo '<li><a href="#'.$row['item_name'].'">'.$row['item_name'].'</a></li>';
 
 ?>

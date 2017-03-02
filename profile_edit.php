@@ -9,11 +9,10 @@ die('データベース選択失敗です。'.mysql_error());
 }
 
 mysql_set_charset('utf8');
-$item_id = $_REQUEST['item_id'];
-$flg_change_button   = $_REQUEST['flg_change_button'];
+$comment_text   = $_REQUEST['comment_text'];
 $user_id = $_REQUEST['user_id'];
 
-$result = mysql_query("UPDATE item SET (item_request_flg, user_id) VALUES('$flg_change_button', '$user_id') WHERE item_id ='$item_id'");
+$result = mysql_query("INSERT INTO comment(comment, user_id) VALUES('$comment_text', '$user_id')");
 
 if (!$result) {
   exit('データを登録できませんでした。'.mysql_error());

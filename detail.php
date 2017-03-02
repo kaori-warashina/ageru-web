@@ -1,5 +1,6 @@
 <?php include 'header.php';?>
 <?php include 'flg_change.php';?>
+<?php include 'comment_add.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
