@@ -20,7 +20,7 @@
 <title>ageru</title>
 </head>
 <body>
-
+<form action="output.php" method="post">
 <header class="clearfix">
 <div class="arrow-width">
 <div class="search-box">

@@ -1,4 +1,5 @@
 <?php include 'header.php';?>
+<?php include 'flg_change.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>

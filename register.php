@@ -19,7 +19,7 @@
                                 <p>メールアドレス</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="mailaddress" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -27,7 +27,7 @@
                                 <p>パスワード</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="password" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@
                                 <p>パスワード<br>（再入力）</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="password" class="text">
                             </td>
                         </tr>
                     </tbody>
@@ -54,7 +54,7 @@
                                 <p>氏名</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="user_name_family" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -62,7 +62,7 @@
                                 <p>氏名（フリガナ）</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="user_name_first" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -70,7 +70,7 @@
                                 <p>ユーザーネーム</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="user_nickname" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -78,9 +78,9 @@
                                 <p>郵便番号</p>
                             </th>
                             <td>
-                                <input type="text" name="number" maxlength='3' class="text-short">
+                                <input type="text" name="city_num" maxlength='3' class="text-short">
                                 <span>-</span>
-                                <input type="text" name="number" maxlength='4' class="text-middium">
+                                <input type="text" name="city_num" maxlength='4' class="text-middium">
                             </td>
                         </tr>
                         <tr>
@@ -88,7 +88,7 @@
                                 <p>都道府県</p>
                             </th>
                             <td>
-                                <select class="text-middium" name="">
+                                <select class="text-middium" name="user_area">
                                     <option value="option" selected="selected">----</option>
                                     <option value="option">北海道</option>
                                     <option value="option">青森県</option>
@@ -145,7 +145,7 @@
                                 <p>住所１（市区町村）</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="address1" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -153,7 +153,7 @@
                                 <p>住所２（番地）</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="address2" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -161,7 +161,7 @@
                                 <p>住所３（建物名）</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="address3" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -169,7 +169,7 @@
                                 <p>お電話番号</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text">
+                                <input type="text" name="phone" class="text">
                             </td>
                         </tr>
                         <tr>
@@ -177,8 +177,8 @@
                                 <p>性別</p>
                             </th>
                             <td>
-                                <label><input type="radio" name="name"> 男性</label>
-                                <label><input type="radio" name="name"> 女性</label>
+                                <label><input type="radio" name="user_sex"> 男性</label>
+                                <label><input type="radio" name="user_sex"> 女性</label>
                             </td>
                         </tr>
                         <tr>
@@ -186,7 +186,7 @@
                                 <p>生年月日</p>
                             </th>
                             <td>
-                                <select class="year" name="year">
+                                <select class="year" name="birthday">
                                     <option value="option" selected="selected">----</option>
                                     <option value="option">1980</option>
                                     <option value="option">1981</option>
@@ -211,7 +211,7 @@
                                     <option value="option">2000</option>
                                 </select>
                                 <span class="birthday">年</span>
-                                <select class="month" name="month">
+                                <select class="month" name="birthday">
                                     <option value="option" selected="selected">--</option>
                                     <option value="option">1</option>
                                     <option value="option">2</option>
@@ -227,7 +227,7 @@
                                     <option value="option">12</option>
                                 </select>
                                 <span class="birthday">月</span>
-                                <select class="day" name="day">
+                                <select class="day" name="birthday">
                                     <option value="option" selected="selected">--</option>
                                     <option value="option">1</option>
                                     <option value="option">2</option>
@@ -301,7 +301,7 @@
                                 <p>身長</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text-middium"> cm
+                                <input type="text" name="height" class="text-middium"> cm
                             </td>
                         </tr>
                         <tr>
@@ -309,7 +309,7 @@
                                 <p>体重</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text-middium"> kg
+                                <input type="text" name="weight" class="text-middium"> kg
                             </td>
                         </tr>
                         <tr>
@@ -317,9 +317,9 @@
                                 <p>愛用ブランド</p>
                             </th>
                             <td>
-                                <label><input type="checkbox" name=""> moussy</label>
-                                <label><input type="checkbox" name=""> moussy</label>
-                                <label><input type="checkbox" name=""> moussy</label>
+                                <label><input type="checkbox" name="brand"> moussy</label>
+                                <label><input type="checkbox" name="brand"> moussy</label>
+                                <label><input type="checkbox" name="brand"> moussy</label>
                             </td>
                         </tr>
                         <tr>
@@ -339,13 +339,13 @@
                                 <p>服の号数</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="radio" name="size"> 3号</label>
-                                <label><input type="radio" name="size"> 5号</label>
-                                <label><input type="radio" name="size"> 7号</label>
-                                <label><input type="radio" name="size"> 9号</label>
-                                <label><input type="radio" name="size"> 11号</label>
-                                <label><input type="radio" name="size"> 13号</label>
-                                <label><input type="radio" name="size"> その他</label>
+                                <label><input type="radio" name="clothessize"> 3号</label>
+                                <label><input type="radio" name="clothessize"> 5号</label>
+                                <label><input type="radio" name="clothessize"> 7号</label>
+                                <label><input type="radio" name="clothessize"> 9号</label>
+                                <label><input type="radio" name="clothessize"> 11号</label>
+                                <label><input type="radio" name="clothessize"> 13号</label>
+                                <label><input type="radio" name="clothessize"> その他</label>
                             </td>
                         </tr>
                         <tr>
@@ -353,7 +353,7 @@
                                 <p>靴のサイズ</p>
                             </th>
                             <td>
-                                <input type="text" name="name" class="text-middium"> cm
+                                <input type="text" name="shoesssize" class="text-middium"> cm
                             </td>
                         </tr>
                         <tr>
@@ -361,14 +361,14 @@
                                 <p>好きなテイスト</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="checkbox" name=""> フェミニン</label>
-                                <label><input type="checkbox" name=""> カジュアル</label>
-                                <label><input type="checkbox" name=""> ガーリー</label>
-                                <label><input type="checkbox" name=""> モード</label>
-                                <label><input type="checkbox" name=""> コンサバ</label>
-                                <label><input type="checkbox" name=""> ユニセックス</label>
-                                <label><input type="checkbox" name=""> ロック</label>
-                                <label><input type="checkbox" name=""> その他</label>
+                                <label><input type="checkbox" name="liketast"> フェミニン</label>
+                                <label><input type="checkbox" name="liketast"> カジュアル</label>
+                                <label><input type="checkbox" name="liketast"> ガーリー</label>
+                                <label><input type="checkbox" name="liketast"> モード</label>
+                                <label><input type="checkbox" name="liketast"> コンサバ</label>
+                                <label><input type="checkbox" name="liketast"> ユニセックス</label>
+                                <label><input type="checkbox" name="liketast"> ロック</label>
+                                <label><input type="checkbox" name="liketast"> その他</label>
                             </td>
                         </tr>
                         <tr>
@@ -376,14 +376,14 @@
                                 <p>苦手テイスト</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="checkbox" name=""> フェミニン</label>
-                                <label><input type="checkbox" name=""> カジュアル</label>
-                                <label><input type="checkbox" name=""> ガーリー</label>
-                                <label><input type="checkbox" name=""> モード</label>
-                                <label><input type="checkbox" name=""> コンサバ</label>
-                                <label><input type="checkbox" name=""> ユニセックス</label>
-                                <label><input type="checkbox" name=""> ロック</label>
-                                <label><input type="checkbox" name=""> その他</label>
+                                <label><input type="checkbox" name="disliketast"> フェミニン</label>
+                                <label><input type="checkbox" name="disliketast"> カジュアル</label>
+                                <label><input type="checkbox" name="disliketast"> ガーリー</label>
+                                <label><input type="checkbox" name="disliketast"> モード</label>
+                                <label><input type="checkbox" name="disliketast"> コンサバ</label>
+                                <label><input type="checkbox" name="disliketast"> ユニセックス</label>
+                                <label><input type="checkbox" name="disliketast"> ロック</label>
+                                <label><input type="checkbox" name="disliketast"> その他</label>
                             </td>
                         </tr>
                         <tr>
@@ -391,10 +391,10 @@
                                 <p>体型</p>
                             </th>
                             <td class="label-block">
-                                <label><input type="radio" name="body"> やせ型</label>
-                                <label><input type="radio" name="body"> 標準</label>
-                                <label><input type="radio" name="body"> ぽっちゃり</label>
-                                <label><input type="radio" name="body"> その他</label>
+                                <label><input type="radio" name="body_type"> やせ型</label>
+                                <label><input type="radio" name="body_type"> 標準</label>
+                                <label><input type="radio" name="body_type"> ぽっちゃり</label>
+                                <label><input type="radio" name="body_type"> その他</label>
                             </td>
                         </tr>
                         <tr>
@@ -402,7 +402,7 @@
                                 <p>自己紹介</p>
                             </th>
                             <td>
-                                <textarea name="name" class="message"></textarea>
+                                <textarea name="user_profile" class="message"></textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -410,7 +410,7 @@
             </form>
         </div> <!-- selfinformation -->
         <div class="registration">
-            <button type="button" name="button">
+            <button type="submit" name="button">
             <a href="register-confirm.php">
             登録する</a></button>
         </div>
