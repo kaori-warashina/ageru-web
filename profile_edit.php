@@ -1,3 +1,5 @@
+<?php include 'header.php';?>
+<div class="middle">
 <?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
@@ -17,3 +19,8 @@ if (!$result) {
   exit('データを登録できませんでした。'.mysql_error());
 }
 ?>
+
+</div> <!-- comment-content -->
+
+</div> <!-- bottom-content -->
+<?php include 'footer.php';?>

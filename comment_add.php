@@ -1,3 +1,5 @@
+<?php include 'header.php';?>
+<div class="middle">
 <?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
@@ -19,3 +21,5 @@ if (!$result) {
 }
 
 ?>
+</div> <!-- bottom-content -->
+<?php include 'footer.php';?>

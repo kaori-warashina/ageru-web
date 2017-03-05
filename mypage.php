@@ -1,5 +1,4 @@
 <?php include 'header.php';?>
-<?php include 'flg_change.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
@@ -110,8 +109,8 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
         <a href="#"><span><?php echo '<a href="userpage.php?user_id='.$row['user_id'].'">'.$row['user_nickname'].'</a>'?></span>さん</a>
     </div> <!-- username-top -->
-    <button type="submit" name="flg_change_button" class="yes" value="1">はい</button>
-    <button type="submit" name="flg_change_button" class="no" value="0">いいえ</button>
+    <button type="submit" action="flg_change.php" name="flg_change_button" class="yes" value="1">はい</button>
+    <button type="submit" action="flg_change.php" name="flg_change_button" class="no" value="0">いいえ</button>
 </div>
 </div> <!-- clothes-information -->
 </li>
@@ -149,7 +148,7 @@ while ($row = mysql_fetch_assoc($result)) {
                 電話番号
             </p>
         </div>
-<button type="submit" name="flg_change_button" class="item-information" value="5">発送完了</button>
+<button type="submit" action="flg_change.php" name="flg_change_button" class="item-information" value="5">発送完了</button>
 </div>
 </div> <!-- clothes-information -->
 </li>
@@ -188,7 +187,7 @@ while ($row = mysql_fetch_assoc($result)) {
                 電話番号
             </p>
         </div>
-<button type="submit" name="button" class="item-information" value="0">到着通知</button>
+<button type="submit" action="flg_change.php" name="button" class="item-information" value="0">到着通知</button>
 </div>
 </div> <!-- clothes-information -->
 </li>
@@ -219,7 +218,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
         <span><?php echo '<a href="userpage.php?user_id='.$row['user_id'].'">'.$row['user_nickname'].'</a>'?></span>さん
     </div> <!-- username-top -->
-    <button type="submit" name="flg_change_button" class="check" value="0">受け取り完了</button>
+    <button type="submit" action="flg_change.php" name="flg_change_button" class="check" value="0">受け取り完了</button>
 </div>
 </div> <!-- clothes-information -->
 </li>

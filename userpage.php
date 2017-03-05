@@ -1,5 +1,4 @@
 <?php include 'header.php';?>
-<?php include 'flg_change.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
@@ -127,7 +126,7 @@ while ($row = mysql_fetch_assoc($result)) {
 						}
 						-->
 						</script>
-						<button type="button" name="button" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
+						<button type="button" action="flg_change.php" name="button" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
 						</div>
 						</div> <!-- clothes-information -->
 						</li>
