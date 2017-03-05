@@ -1,4 +1,5 @@
 <?php include 'header.php';?>
+<?php include 'register_edit.php';?>
 <div class="middle">
     <div class="middle-guide arrow-width">
         <ul>
@@ -21,7 +22,7 @@
                                 <p>メールアドレス</p>
                             </th>
                             <td>
-                                XXXX@XXXX.com
+                                <?php print($mailaddress)?>
                             </td>
                         </tr>
                         <tr>
@@ -29,7 +30,7 @@
                                 <p>パスワード</p>
                             </th>
                             <td>
-                                *****
+                                <?php print($password)?>
                             </td>
                         </tr>
                         <tr>
@@ -37,7 +38,7 @@
                                 <p>パスワード（再入力）</p>
                             </th>
                             <td>
-                                *****
+                                <?php print($password)?>
                             </td>
                         </tr>
                     </tbody>
@@ -54,7 +55,7 @@
                                     <p>氏名</p>
                                 </th>
                                 <td>
-                                    山田　太郎
+                                    <?php print($user_name_first)?>
                                 </td>
                             </tr>
                             <tr>
@@ -62,7 +63,7 @@
                                     <p>氏名（フリガナ）</p>
                                 </th>
                                 <td>
-                                    ヤマダ　タロウ
+                                    <?php print($user_name_family)?>
                                 </td>
                             </tr>
                             <tr>
@@ -70,7 +71,7 @@
                                     <p>ユーザーネーム</p>
                                 </th>
                                 <td>
-                                    yamadaTarou
+                                    <?php print($user_nickname)?>
                                 </td>
                             </tr>
                             <tr>
@@ -78,7 +79,7 @@
                                     <p>郵便番号</p>
                                 </th>
                                 <td>
-                                    000-0000
+                                    <?php print($city_num)?>
                                 </td>
                             </tr>
                             <tr>
@@ -86,7 +87,7 @@
                                     <p>都道府県</p>
                                 </th>
                                 <td>
-                                    東京都
+                                    <?php print($user_area)?>
                                 </td>
                             </tr>
                             <tr>
@@ -94,7 +95,7 @@
                                     <p>住所１（市区町村）</p>
                                 </th>
                                 <td>
-                                    XX市XX町
+                                    <?php print($address1)?>
                                 </td>
                             </tr>
                             <tr>
@@ -102,7 +103,7 @@
                                     <p>住所２（番地）</p>
                                 </th>
                                 <td>
-                                   0000
+                                   <?php print($address2)?>
                                 </td>
                             </tr>
                             <tr>
@@ -110,7 +111,7 @@
                                     <p>住所３（建物名）</p>
                                 </th>
                                 <td>
-                                    アパート名
+                                    <?php print($address3)?>
                                 </td>
                             </tr>
                             <tr>
@@ -118,7 +119,7 @@
                                     <p>お電話番号</p>
                                 </th>
                                 <td>
-                                    000-0000-0000
+                                    <?php print($phone)?>
                                 </td>
                             </tr>
                             <tr>
@@ -126,7 +127,7 @@
                                     <p>性別</p>
                                 </th>
                                 <td>
-                                    男性
+                                    <?php print($user_sex)?>
                                 </td>
                             </tr>
                             <tr>
@@ -134,7 +135,7 @@
                                     <p>生年月日</p>
                                 </th>
                                 <td>
-                                    1999年01月01日
+                                    <?php print($birthday)?>
                                 </td>
                             </tr>
                             <tr>
@@ -148,11 +149,10 @@
                             <tr>
                                 <th>
                                     <p>その他</p>
+                                    <?php print($user_profile)?>
                                 </th>
                                 <td>
-                                    文章文章文章文章文章文章文章<br>
-                                    文章文章文章文章文章文章文章文章<br>
-                                    文章文章文章文章文章文章
+
                                 </td>
                             </tr>
                         </tbody>
@@ -169,7 +169,7 @@
                                     <p>身長</p>
                                 </th>
                                 <td>
-                                    XXX cm
+                                    <?php print($height)?> cm
                                 </td>
                             </tr>
                             <tr>
@@ -177,7 +177,7 @@
                                     <p>体重</p>
                                 </th>
                                 <td>
-                                    XX kg
+                                    <?php print($weight)?> kg
                                 </td>
                             </tr>
                             <tr>
@@ -185,7 +185,7 @@
                                     <p>愛用ブランド</p>
                                 </th>
                                 <td>
-                                    moussy, moussy
+                                    <?php print($brand)?>
                                 </td>
                             </tr>
                             <tr>
@@ -193,7 +193,7 @@
                                     <p>服のサイズ</p>
                                 </th>
                                 <td>
-                                    SS
+                                    <?php print($sizeSL)?>
                                 </td>
                             </tr>
                             <tr>
@@ -201,7 +201,7 @@
                                     <p>服の号数</p>
                                 </th>
                                 <td class="label-block">
-                                    3号
+                                    <?php print($clothessize)?>
                                 </td>
                             </tr>
                             <tr>
@@ -209,7 +209,7 @@
                                     <p>靴のサイズ</p>
                                 </th>
                                 <td>
-                                    XXX cm
+                                    <?php print($shoesssize)?> cm
                                 </td>
                             </tr>
                             <tr>
@@ -217,7 +217,7 @@
                                     <p>好きなテイスト</p>
                                 </th>
                                 <td class="label-block">
-                                    フェミニン, カジュアル, ガーリー
+                                    <?php print($liketast)?>
                                 </td>
                             </tr>
                             <tr>
@@ -225,7 +225,7 @@
                                     <p>苦手テイスト</p>
                                 </th>
                                 <td class="label-block">
-                                    フェミニン, カジュアル, ガーリー
+                                    <?php print($disliketast)?>
                                 </td>
                             </tr>
                             <tr>
@@ -233,7 +233,7 @@
                                     <p>体型</p>
                                 </th>
                                 <td class="label-block">
-                                    やせ型
+                                    <?php print($body_type)?>
                                 </td>
                             </tr>
                             <tr>
@@ -241,9 +241,7 @@
                                     <p>自己紹介</p>
                                 </th>
                                 <td>
-                                    文章文章文章文章文章文章文章<br>
-                                    文章文章文章文章文章文章文章文章<br>
-                                    文章文章文章文章文章文章
+                                    <?php print($height)?><br>
                                 </td>
                             </tr>
                         </tbody>

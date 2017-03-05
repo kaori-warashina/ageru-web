@@ -11,6 +11,10 @@ die('データベース選択失敗です。'.mysql_error());
 mysql_set_charset('utf8');
 $mailaddress = $_REQUEST['mailaddress'];
 $password   = $_REQUEST['password'];
+$user_name_first = $_REQUEST['user_name_first'];
+$user_name_family = $_REQUEST['user_name_family'];
+$user_nickname = $_REQUEST['user_nickname'];
+$user_profile = $_REQUEST['user_profile']
 $user_birthday = $_REQUEST['user_birthday'];
 $user_sex = $_REQUEST['user_sex'];
 $user_area   = $_REQUEST['user_area'];

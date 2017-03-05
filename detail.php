@@ -70,7 +70,7 @@ document.getElementById("txt").innerHTML=txt;
 -->
 </script>
 	        <div class="right-bottom"><a href="javascript:void(0)" onclick="ChangeTxt(txt1); return false;">
-	            <button type="submit" name="flg_change_button"　onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
+	            <button type="submit" name="flg_change_button" value="1" onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
 	        </div>
 	    </div>
 	</div>

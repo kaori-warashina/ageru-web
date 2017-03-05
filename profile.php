@@ -59,7 +59,7 @@
                                 <label>自己紹介</label>
                             </th>
                             <td>
-                                <textarea name="name" class="selfintroduction-profile"></textarea>
+                                <textarea name="user_profile" class="selfintroduction-profile" ></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +67,7 @@
                                 <label>外部サイトURL</label>
                             </th>
                             <td>
-                                <input type="text" name="url" placeholder="ブログ、ホームページなどのURL" class="outside-url">
+                                <input type="text" name="user_url" placeholder="ブログ、ホームページなどのURL" class="outside-url">
                             </td>
                         </tr>
                         <tr>
@@ -75,7 +75,7 @@
                                 <label>生年月日</label>
                             </th>
                             <td>
-                                <select class="year" name="year">
+                                <select class="year" name="birthday">
                                     <option value="option" selected="selected">----</option>
                                     <option value="option">1980</option>
                                     <option value="option">1981</option>
@@ -100,7 +100,7 @@
                                     <option value="option">2000</option>
                                 </select>
                                 <span class="birthday-profile">年</span>
-                                <select class="month" name="month">
+                                <select class="month" name="birthday">
                                     <option value="option" selected="selected">--</option>
                                     <option value="option">1</option>
                                     <option value="option">2</option>
@@ -116,7 +116,7 @@
                                     <option value="option">12</option>
                                 </select>
                                 <span class="birthday-profile">月</span>
-                                <select class="day" name="day">
+                                <select class="day" name="birthday">
                                     <option value="option" selected="selected">--</option>
                                     <option value="option">1</option>
                                     <option value="option">2</option>
@@ -158,7 +158,7 @@
                                 <label>性別</label>
                             </th>
                             <td>
-                                <select class="sex-profile" name="sex">
+                                <select class="sex-profile" name="user_sex">
                                     <option value="option" selected="selected">----</option>
                                     <option value="option">男性</option>
                                     <option value="option">女性</option>
@@ -170,7 +170,7 @@
                                 <label>住んでるエリア</label>
                             </th>
                             <td>
-                                <select class="area-profile" name="area">
+                                <select class="area-profile" name="user_area">
                                     <option value="option" selected="selected">----</option>
                                     <option value="option">福岡</option>
                                     <option value="option">佐賀</option>
