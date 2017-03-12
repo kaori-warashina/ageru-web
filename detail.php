@@ -68,7 +68,7 @@ document.getElementById("txt").innerHTML=txt;
 -->
 </script>
 	        <div class="right-bottom"><a href="javascript:void(0)" onclick="ChangeTxt(txt1); return false;">
-	            <button action="flg_change.php" type="submit" name="flg_change_button" value="1" onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
+	            <button action="flg_change.php" type="submit"　method="post" name="flg_change_button" value="1" onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
 	        </div>
 	    </div>
 	</div>
@@ -117,10 +117,10 @@ while ($row = mysql_fetch_assoc($result)) {
 <textarea name="comment_text" rows="" cols=""></textarea>
 </div>
 <div class="comment-sent">
-<button type="submit" name="comment_add_button" action="comment_add.php">投稿する</button>
+<button type="submit" name="item_id" value="<?php echo $_GET['item_id']?>">投稿する</button>
+<?php echo $_SERVER['QUERY_STRING'];?>
 </div>
 </form>
 </div> <!-- comment-content -->
-
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
