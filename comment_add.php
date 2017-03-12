@@ -1,4 +1,7 @@
-<?php include 'header.php';?>
+<?php
+session_start();
+$user_id = $_SESSION[user_id];
+include 'header.php';?>
 <div class="middle">
 <?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");

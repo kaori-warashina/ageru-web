@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<?php
+session_start();
+$user_id = $_SESSION[user_id];
+include 'header.php'; ?>
 <div class="middle">
     <div class="middle-guide arrow-width">
         <ul>
