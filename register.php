@@ -1,4 +1,6 @@
-<?php include 'header.php';?>
+<?php
+session_start();
+include 'header.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
@@ -413,6 +415,8 @@
 <button type="submit" name="button">
 <a href="register-confirm.php">
 登録する</a></button>
+
+
 </div>
 </div> <!-- register-content -->
 </div> <!-- arrow-width -->

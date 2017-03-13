@@ -9,39 +9,39 @@ die('データベース選択失敗です。'.mysql_error());
 }
 
 mysql_set_charset('utf8');
-$mailaddress = $_REQUEST['mailaddress'];
-$password   = $_REQUEST['password'];
-$user_name_first = $_REQUEST['user_name_first'];
-$user_name_family = $_REQUEST['user_name_family'];
-$user_nickname = $_REQUEST['user_nickname'];
-$user_profile = $_REQUEST['user_profile']
-$user_birthday = $_REQUEST['user_birthday'];
-$user_sex = $_REQUEST['user_sex'];
-$user_area   = $_REQUEST['user_area'];
-$city_num = $_REQUEST['city_num'];
-$address1   = $_REQUEST['address1'];
-$address2 = $_REQUEST['address2'];
-$address3   = $_REQUEST['address3'];
-$phone = $_REQUEST['phone'];
-$birthday   = $_REQUEST['birthday'];
-$body_type = $_REQUEST['body_type'];
-$body_size   = $_REQUEST['body_size'];
-$liketast = $_REQUEST['liketast'];
-$disliketast   = $_REQUEST['disliketast'];
-$brand = $_REQUEST['brand'];
-$height   = $_REQUEST['height'];
-$weight   = $_REQUEST['weight'];
-$sizeSL = $_REQUEST['sizeSL'];
-$clothessize   = $_REQUEST['clothessize'];
-$shoesssize = $_REQUEST['shoesssize'];
+$mailaddress = $_POST['mailaddress'];
+$password   = $_POST['password'];
+$user_name_first = $_POST['user_name_first'];
+$user_name_family = $_POST['user_name_family'];
+$user_nickname = $_POST['user_nickname'];
+$user_profile = $_POST['user_profile']
+$user_birthday = $_POST['user_birthday'];
+$user_sex = $_POST['user_sex'];
+$user_area   = $_POST['user_area'];
+$city_num = $_POST['city_num'];
+$address1   = $_POST['address1'];
+$address2 = $_POST['address2'];
+$address3   = $_POST['address3'];
+$phone = $_POST['phone'];
+$birthday   = $_POST['birthday'];
+$body_type = $_POST['body_type'];
+$body_size   = $_POST['body_size'];
+$liketast = $_POST['liketast'];
+$disliketast   = $_POST['disliketast'];
+$brand = $_POST['brand'];
+$height   = $_POST['height'];
+$weight   = $_POST['weight'];
+$sizeSL = $_POST['sizeSL'];
+$clothessize   = $_POST['clothessize'];
+$shoesssize = $_POST['shoesssize'];
 
 
 
-$result = mysql_query(
+$result = mysql_query("
 	INSERT INTO `ageru_web`.`user_master` 
-	(`user_id`,`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
+	(`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
 	VALUES 
-	(NULL, '$mailaddress', '$password', '$user_birthday', '$user_name_first', '$user_name_family', '$user_nickname', '$user_image', '$user_profile', '$user_birthday', '$user_sex', '$user_area', '$city_num', '$address1', '$address2', '$address3', '$phone', '$birthday', '$body_type', '$body_size', '$liketast', '$disliketast', '$brand', '$height', '$weight', '$sizeSL', '$clothessize'););
+	(".$mailaddress."', '".$password."', '".$user_birthday."', '".$user_name_first."', '".$user_name_family."', '".$user_nickname."', '".$user_image."', '".$user_profile."', '".$user_birthday."', '".$user_sex."', '".$user_area."', '".$city_num."', '".$address1."', '".$address2."', '".$address3."', '".$phone."', '".$birthday."', '".$body_type."', '".$body_size."', '".$liketast."', '".$disliketast."', '".$brand."', '".$height."', '".$weight."', '".$sizeSL."', '".$clothessize."')");
 
 if (!$result) {
 die('ログインにが失敗しました。'.mysql_error());

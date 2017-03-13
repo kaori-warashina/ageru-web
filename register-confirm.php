@@ -22,7 +22,7 @@
         <p>メールアドレス</p>
     </th>
     <td>
-        <?php print($_REQUEST['mailaddress'])?>
+        <?php print($_POST['mailaddress'])?>
     </td>
 </tr>
 <tr>
@@ -30,7 +30,7 @@
         <p>パスワード</p>
     </th>
     <td>
-        <?php print($_REQUEST['password'])?>
+        <?php print($_POST['password'])?>
     </td>
 </tr>
 <tr>
@@ -38,7 +38,7 @@
         <p>パスワード（再入力）</p>
     </th>
     <td>
-        <?php print($_REQUEST['password'])?>
+        <?php print($_POST['password'])?>
     </td>
 </tr>
 </tbody>
@@ -55,7 +55,7 @@
             <p>氏名</p>
         </th>
         <td>
-            <?php print($_REQUEST['user_name_first'])?>
+            <?php print($_POST['user_name_first'])?>
         </td>
     </tr>
     <tr>
@@ -63,7 +63,7 @@
             <p>氏名（フリガナ）</p>
         </th>
         <td>
-            <?php print($_REQUEST['user_name_family'])?>
+            <?php print($_POST['user_name_family'])?>
         </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@
             <p>ユーザーネーム</p>
         </th>
         <td>
-            <?php print($_REQUEST['user_nickname'])?>
+            <?php print($_POST['user_nickname'])?>
         </td>
     </tr>
     <tr>
@@ -79,7 +79,7 @@
             <p>郵便番号</p>
         </th>
         <td>
-            <?php print($_REQUEST['city_num'])?>
+            <?php print($_POST['city_num'])?>
         </td>
     </tr>
     <tr>
@@ -87,7 +87,7 @@
             <p>都道府県</p>
         </th>
         <td>
-            <?php print($_REQUEST['user_area'])?>
+            <?php print($_POST['user_area'])?>
         </td>
     </tr>
     <tr>
@@ -95,7 +95,7 @@
             <p>住所１（市区町村）</p>
         </th>
         <td>
-            <?php print($_REQUEST['address1'])?>
+            <?php print($_POST['address1'])?>
         </td>
     </tr>
     <tr>
@@ -103,7 +103,7 @@
             <p>住所２（番地）</p>
         </th>
         <td>
-           <?php print($_REQUEST['address2'])?>
+           <?php print($_POST['address2'])?>
         </td>
     </tr>
     <tr>
@@ -111,7 +111,7 @@
             <p>住所３（建物名）</p>
         </th>
         <td>
-            <?php print($_REQUEST['address3'])?>
+            <?php print($_POST['address3'])?>
         </td>
     </tr>
     <tr>
@@ -119,7 +119,7 @@
             <p>お電話番号</p>
         </th>
         <td>
-            <?php print($_REQUEST['phone'])?>
+            <?php print($_POST['phone'])?>
         </td>
     </tr>
     <tr>
@@ -127,7 +127,7 @@
             <p>性別</p>
         </th>
         <td>
-            <?php print($_REQUEST['user_sex'])?>
+            <?php print($_POST['user_sex'])?>
         </td>
     </tr>
     <tr>
@@ -135,7 +135,7 @@
             <p>生年月日</p>
         </th>
         <td>
-            <?php print($_REQUEST['birthday'])?>
+            <?php print($_POST['birthday'])?>
         </td>
     </tr>
     <tr>
@@ -149,7 +149,7 @@
     <tr>
         <th>
             <p>その他</p>
-            <?php print($_REQUEST['user_profile'])?>
+            <?php print($_POST['user_profile'])?>
         </th>
         <td>
 
@@ -169,7 +169,7 @@
             <p>身長</p>
         </th>
         <td>
-            <?php print($_REQUEST['height'])?> cm
+            <?php print($_POST['height'])?> cm
         </td>
     </tr>
     <tr>
@@ -177,7 +177,7 @@
             <p>体重</p>
         </th>
         <td>
-            <?php print($_REQUEST['weight'])?> kg
+            <?php print($_POST['weight'])?> kg
         </td>
     </tr>
     <tr>
@@ -185,7 +185,7 @@
             <p>愛用ブランド</p>
         </th>
         <td>
-            <?php print($_REQUEST['brand'])?>
+            <?php print($_POST['brand'])?>
         </td>
     </tr>
     <tr>
@@ -193,7 +193,7 @@
             <p>服のサイズ</p>
         </th>
         <td>
-            <?php print($_REQUEST['sizeSL'])?>
+            <?php print($_POST['sizeSL'])?>
         </td>
     </tr>
     <tr>
@@ -201,7 +201,7 @@
             <p>服の号数</p>
         </th>
         <td class="label-block">
-            <?php print($_REQUEST['clothessize'])?>
+            <?php print($_POST['clothessize'])?>
         </td>
     </tr>
     <tr>
@@ -209,7 +209,7 @@
             <p>靴のサイズ</p>
         </th>
         <td>
-            <?php print($_REQUEST['shoesssize'])?> cm
+            <?php print($_POST['shoesssize'])?> cm
         </td>
     </tr>
     <tr>
@@ -217,7 +217,7 @@
             <p>好きなテイスト</p>
         </th>
         <td class="label-block">
-            <?php print($_REQUEST['liketast'])?>
+            <?php print($_POST['liketast'])?>
         </td>
     </tr>
     <tr>
@@ -225,7 +225,7 @@
             <p>苦手テイスト</p>
         </th>
         <td class="label-block">
-            <?php print($_REQUEST['disliketast'])?>
+            <?php print($_POST['disliketast'])?>
         </td>
     </tr>
     <tr>
@@ -233,7 +233,7 @@
             <p>体型</p>
         </th>
         <td class="label-block">
-            <?php print($_REQUEST['body_type'])?>
+            <?php print($_POST['body_type'])?>
         </td>
     </tr>
     <tr>
@@ -241,7 +241,7 @@
             <p>自己紹介</p>
         </th>
         <td>
-            <?php print($_REQUEST['height'])?><br>
+            <?php print($_POST['height'])?><br>
         </td>
     </tr>
 </tbody>
