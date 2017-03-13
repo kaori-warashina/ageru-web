@@ -1,5 +1,9 @@
 <?php
 session_start();
+$user_id = $_SESSION[user_id];
+include 'header.php';?>
+<div class="middle">
+<?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
 die('接続失敗です。'.mysql_error());
@@ -22,3 +26,6 @@ while ($row = mysql_fetch_assoc($result)) {
 	$_SESSION['user_id'] = $row[user_id];
 print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 ?>
+
+</div> <!-- bottom-content -->
+<?php include 'footer.php';?>
