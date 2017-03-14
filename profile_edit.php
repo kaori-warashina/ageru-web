@@ -15,7 +15,7 @@ die('データベース選択失敗です。'.mysql_error());
 
 mysql_set_charset('utf8');
 $comment_text   = $_REQUEST['comment_text'];
-$user_id = $_REQUEST['user_id'];
+$user_id = $_SESSION['user_id'];
 $result = mysql_query("INSERT INTO comment(comment, user_id) VALUES('".$comment_text."', '".$user_id."')");
 
 if (!$result) {

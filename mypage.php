@@ -145,10 +145,10 @@ while ($row = mysql_fetch_assoc($result)) {
     </div> <!-- username-top -->
     <button type="button" name="button" class="check address">住所を確認</button>
         <div class="address-box">
-            <p>〒000-0000<br>
-                XX県XX市XX町000-00<br>
-                名前<br>
-                電話番号
+            <p><?php print($row['city_num'])?><br>
+                <?php print($row['user_area'])?><?php print($row['address1'])?><?php print($row['address2'])?><?php print($row['address3'])?><br>
+                <?php print($row['user_name_first'])?><br>
+                <?php print($row['phone'])?>
             </p>
         </div>
 <button type="submit" action="flg_change.php" name="flg_change_button" class="item-information" value="5">発送完了</button>
@@ -184,10 +184,10 @@ while ($row = mysql_fetch_assoc($result)) {
     </div> <!-- username-top -->
     <button type="button" name="button" class="check address">発送元を確認</button>
         <div class="address-box">
-            <p>〒000-0000<br>
-                XX県XX市XX町000-00<br>
-                名前<br>
-                電話番号
+            <p><?php print($row['city_num'])?><br>
+                <?php print($row['user_area'])?><?php print($row['address1'])?><?php print($row['address2'])?><?php print($row['address3'])?><br>
+                <?php print($row['user_name_first'])?><br>
+                <?php print($row['phone'])?>
             </p>
         </div>
 <button type="submit" action="flg_change.php" name="button" class="item-information" method="post" value="0">到着通知</button>
