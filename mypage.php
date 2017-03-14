@@ -18,7 +18,7 @@ if (!$db_selected) {
 die('データベース選択失敗です。'.mysql_error());
 }
 mysql_set_charset('utf8');
-$result = mysql_query("SELECT * FROM `user_master` WHERE `user_id`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `user_master` WHERE `user_id`=".$user_id);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -67,7 +67,7 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <!-- clothes-information max5 -->
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=1 AND `item_user`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=1 AND `item_user`=".$user_id);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -164,7 +164,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <h3>到着待ちの商品</h3>
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=5 AND `item_user`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=5 AND `item_user`=".$user_id);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }

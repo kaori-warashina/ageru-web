@@ -1,5 +1,4 @@
 <?php include 'header.php';?>
-<?php include 'register_edit.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
@@ -248,6 +247,11 @@
 </table>
 </div> <!-- selfinformation -->
 <div class="registration">
+<?php
+foreach (array_keys($_POST) as $key) {
+    $_SESSION[$key] = $_POST[$key];
+}
+?>
 <button type="submit" action="register-complete.php"  name="button">
 <a href="register-complete.php">登録する</a></button>
 </div>

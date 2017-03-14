@@ -52,6 +52,10 @@ $shoesssize = $_POST['shoesssize'];
 
 
 
+foreach (array_keys($_POST) as $key) {
+    $_SESSION[$key] = $_POST[$key];
+}
+
 $result = mysql_query("
 	INSERT INTO `ageru_web`.`user_master` 
 	(`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)

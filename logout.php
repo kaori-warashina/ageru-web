@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<?php
+session_start() ;
+$user_id = $_SESSION[user_id];
+include 'header.php'; ?>
 <div class="middle">
     <div class="middle-guide arrow-width">
         <ul>
@@ -11,4 +14,7 @@
     <p class="co-p">ログアウトしました。</p>
     <p class="return-link home"><a href="/">トップページへ</a></p>
 </div> <!-- arrow-width -->
-<?php include 'footer.php'; ?>
+<?php
+$_SESSION = array() ;
+session_destroy() ;
+include 'footer.php'; ?>
