@@ -12,8 +12,8 @@ die('クエリーが失敗しました。'.mysql_error());
 
     <div class="middle-guide arrow-width">
         <ul>
-            <li><a href="#">ageruトップ</a></li>
-            <li><a href="#">マイページ</a></li>
+            <li><a href="index.php">ageruトップ</a></li>
+            <li><a href="mypage.php">マイページ</a></li>
             <li><a href="#">プロフィール編集</a></li>
         </ul>
     </div>
@@ -69,7 +69,7 @@ die('クエリーが失敗しました。'.mysql_error());
                                 <label>自己紹介</label>
                             </th>
                             <td>
-                                <textarea name="user_profile" class="selfintroduction-profile" ><?php echo $row['message']?></textarea>
+                                <textarea name="message" class="selfintroduction-profile" ><?php echo $row['message']?></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -77,7 +77,7 @@ die('クエリーが失敗しました。'.mysql_error());
                                 <label>外部サイトURL</label>
                             </th>
                             <td>
-                                <input type="text" name="user_url" placeholder="ブログ、ホームページなどのURL" class="outside-url">
+                                <input type="text" name="user_url" placeholder="ブログ、ホームページなどのURL" class="outside-url" value="<?php echo $row['message']?>">
                             </td>
                         </tr>
                         <tr>

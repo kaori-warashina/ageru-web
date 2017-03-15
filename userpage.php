@@ -64,7 +64,7 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 </tr>
 <tr>
 <th>自己紹介</th>
-<td><?php print$row['user_profile']?></td>
+<td><?php print$row['message']?></td>
 </tr>
 </tbody>
 </table>

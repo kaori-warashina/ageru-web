@@ -18,7 +18,7 @@ include 'header.php';?>
             <form class="login" action="login_page.php" method="post">
                 <p>メールアドレス</p><input type="text" name="mailaddress" placeholder="メールアドレス">
                 <p>パスワード</p><input type="password" name="password" placeholder="パスワード">
-                <button type="submit" name="button"><a href="index.php?user_id=4"> ログイン</a></button>
+                <button type="submit" name="button">ログイン</button>
             </form>
         </div>
     </div>
