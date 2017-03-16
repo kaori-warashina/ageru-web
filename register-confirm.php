@@ -11,48 +11,45 @@
 
 <div class="arrow-width">
 <p class="co-p">以下の内容で登録します。よろしいですか？</p>
-<form class="form-register confirm" action="register-confirm.php" method="post">
+<form class="form-register confirm" action="register_edit.php" method="post">
 <div class="register-content">
 <div class="login-register">
 <?php 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // フォームから送信されたデータを各変数に格納
-    $mailaddress = $_POST['mailaddress'];
-    $password   = $_POST['password'];
-    $user_name_first = $_POST['user_name_first'];
-    $user_name_family = $_POST['user_name_family'];
-    $user_nickname = $_POST['user_nickname'];
-    $user_profile = $_POST['user_profile']
-    $user_birthday = $_POST['user_birthday'];
-    $user_sex = $_POST['user_sex'];
-    $user_area   = $_POST['user_area'];
-    $city_num = $_POST['city_num'];
-    $address1   = $_POST['address1'];
-    $address2 = $_POST['address2'];
-    $address3   = $_POST['address3'];
-    $phone = $_POST['phone'];
-    $birthday   = $_POST['birthday'];
-    $body_type = $_POST['body_type'];
-    $body_size   = $_POST['body_size'];
-    $liketast = $_POST['liketast'];
-    $disliketast   = $_POST['disliketast'];
-    $brand = $_POST['brand'];
-    $height   = $_POST['height'];
-    $weight   = $_POST['weight'];
-    $sizeSL = $_POST['sizeSL'];
-    $clothessize   = $_POST['clothessize'];
-    $shoesssize = $_POST['shoesssize'];
-    }
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // $mailaddress = $_POST['mailaddress'];
+    // $password   = $_POST['password'];
+    // $user_name_first = $_POST['user_name_first'];
+    // $user_name_family = $_POST['user_name_family'];
+    // $user_nickname = $_POST['user_nickname'];
+    // $user_profile = $_POST['user_profile']
+    // $user_birthday = $_POST['user_birthday'];
+    // $user_sex = $_POST['user_sex'];
+    // $user_area   = $_POST['user_area'];
+    // $city_num = $_POST['city_num'];
+    // $address1   = $_POST['address1'];
+    // $address2 = $_POST['address2'];
+    // $address3   = $_POST['address3'];
+    // $phone = $_POST['phone'];
+    // $birthday   = $_POST['birthday'];
+    // $body_type = $_POST['body_type'];
+    // $body_size   = $_POST['body_size'];
+    // $liketast = $_POST['liketast'];
+    // $disliketast   = $_POST['disliketast'];
+    // $brand = $_POST['brand'];
+    // $height   = $_POST['height'];
+    // $weight   = $_POST['weight'];
+    // $sizeSL = $_POST['sizeSL'];
+    // $clothessize   = $_POST['clothessize'];
+    // $shoesssize = $_POST['shoesssize'];
+    // };
 
- if (isset($_POST["submit"])) {
-    $result = mysql_query("
-    INSERT INTO `ageru_web`.`user_master` 
-    (`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
-    VALUES 
-    (".$mailaddress."', '".$password."', '".$user_birthday."', '".$user_name_first."', '".$user_name_family."', '".$user_nickname."', '".$user_image."', '".$user_profile."', '".$user_birthday."', '".$user_sex."', '".$user_area."', '".$city_num."', '".$address1."', '".$address2."', '".$address3."', '".$phone."', '".$birthday."', '".$body_type."', '".$body_size."', '".$liketast."', '".$disliketast."', '".$brand."', '".$height."', '".$weight."', '".$sizeSL."', '".$clothessize."')");
-     }
-    header("Location: ./register-comnlete.php");
-    exit;
+ // if (isset($_POST["submit"])) {
+ //    $result = mysql_query("
+ //    INSERT INTO `ageru_web`.`user_master` 
+ //    (`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
+ //    VALUES 
+ //    (".$mailaddress."', '".$password."', '".$user_birthday."', '".$user_name_first."', '".$user_name_family."', '".$user_nickname."', '".$user_image."', '".$user_profile."', '".$user_birthday."', '".$user_sex."', '".$user_area."', '".$city_num."', '".$address1."', '".$address2."', '".$address3."', '".$phone."', '".$birthday."', '".$body_type."', '".$body_size."', '".$liketast."', '".$disliketast."', '".$brand."', '".$height."', '".$weight."', '".$sizeSL."', '".$clothessize."')");
+ //     };
 ?>
 <input type="hidden" name="name" value="<?php echo $mailaddress ; ?>">
 <input type="hidden" name="name" value="<?php echo $password; ?>">
