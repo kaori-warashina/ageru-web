@@ -11,7 +11,7 @@
 
 <div class="arrow-width">
 <p class="co-p">以下の内容で登録します。よろしいですか？</p>
-<form class="form-register confirm" action="" method="post">
+<form class="form-register confirm" action="register-confirm.php" method="post">
 <div class="register-content">
 <div class="login-register">
 <?php 
@@ -54,6 +54,31 @@
     header("Location: ./register-comnlete.php");
     exit;
 ?>
+<input type="hidden" name="name" value="<?php echo $mailaddress ; ?>">
+<input type="hidden" name="name" value="<?php echo $password; ?>">
+<input type="hidden" name="name" value="<?php echo $user_name_first; ?>">
+<input type="hidden" name="name" value="<?php echo $user_name_family; ?>">
+<input type="hidden" name="name" value="<?php echo $user_nickname; ?>">
+<input type="hidden" name="name" value="<?php echo $user_profile; ?>">
+<input type="hidden" name="name" value="<?php echo $user_birthday; ?>">
+<input type="hidden" name="name" value="<?php echo $user_sex; ?>">
+<input type="hidden" name="name" value="<?php echo $user_area; ?>">
+<input type="hidden" name="name" value="<?php echo $city_num; ?>">
+<input type="hidden" name="name" value="<?php echo $address1; ?>">
+<input type="hidden" name="name" value="<?php echo $address2; ?>">
+<input type="hidden" name="name" value="<?php echo $address3; ?>">
+<input type="hidden" name="name" value="<?php echo $phone; ?>">
+<input type="hidden" name="name" value="<?php echo $birthday; ?>">
+<input type="hidden" name="name" value="<?php echo $body_type; ?>">
+<input type="hidden" name="name" value="<?php echo $body_size; ?>">
+<input type="hidden" name="name" value="<?php echo $liketast; ?>">
+<input type="hidden" name="name" value="<?php echo $disliketast; ?>">
+<input type="hidden" name="name" value="<?php echo $brand; ?>">
+<input type="hidden" name="name" value="<?php echo $height; ?>">
+<input type="hidden" name="name" value="<?php echo $weight; ?>">
+<input type="hidden" name="name" value="<?php echo $sizeSL; ?>">
+<input type="hidden" name="name" value="<?php echo $clothessize; ?>">
+<input type="hidden" name="name" value="<?php echo $shoesssize; ?>">
 
 <table>
 <tbody>
@@ -62,7 +87,7 @@
         <p>メールアドレス</p>
     </th>
     <td>
-        <?php print($mailaddress)?>
+        <?php echo $mailaddress; ?>
     </td>
 </tr>
 <tr>
@@ -70,7 +95,7 @@
         <p>パスワード</p>
     </th>
     <td>
-        <?php print($password)?>
+        <?php echo $password; ?>
     </td>
 </tr>
 <tr>
@@ -78,7 +103,7 @@
         <p>パスワード（再入力）</p>
     </th>
     <td>
-        <?php print($password)?>
+        <?php echo $password; ?>
     </td>
 </tr>
 </tbody>
@@ -95,7 +120,7 @@
             <p>氏名</p>
         </th>
         <td>
-            <?php print($user_name_first)?>
+            <?php echo $user_name_first; ?>
         </td>
     </tr>
     <tr>
@@ -103,7 +128,7 @@
             <p>氏名（フリガナ）</p>
         </th>
         <td>
-            <?php print($user_name_family)?>
+            <?php echo $user_name_family; ?>
         </td>
     </tr>
     <tr>
@@ -111,7 +136,7 @@
             <p>ユーザーネーム</p>
         </th>
         <td>
-            <?php print($user_nickname)?>
+            <?php echo $user_nickname; ?>
         </td>
     </tr>
     <tr>
@@ -119,7 +144,7 @@
             <p>郵便番号</p>
         </th>
         <td>
-            <?php print($city_num)?>
+            <?php echo $city_num; ?>
         </td>
     </tr>
     <tr>
@@ -127,7 +152,7 @@
             <p>都道府県</p>
         </th>
         <td>
-            <?php print($user_area)?>
+            <?php echo $user_area; ?>
         </td>
     </tr>
     <tr>
@@ -135,7 +160,7 @@
             <p>住所１（市区町村）</p>
         </th>
         <td>
-            <?php print($address1)?>
+            <?php echo $address1; ?>
         </td>
     </tr>
     <tr>
@@ -143,7 +168,7 @@
             <p>住所２（番地）</p>
         </th>
         <td>
-           <?php print($address2)?>
+           <?php echo $address2; ?>
         </td>
     </tr>
     <tr>
@@ -151,7 +176,7 @@
             <p>住所３（建物名）</p>
         </th>
         <td>
-            <?php print($address3)?>
+            <?php echo $address3; ?>
         </td>
     </tr>
     <tr>
@@ -159,7 +184,7 @@
             <p>お電話番号</p>
         </th>
         <td>
-            <?php print($phone)?>
+            <?php echo $phone; ?>
         </td>
     </tr>
     <tr>
@@ -167,7 +192,7 @@
             <p>性別</p>
         </th>
         <td>
-            <?php print($user_sex)?>
+            <?php echo $user_sex; ?>
         </td>
     </tr>
     <tr>
@@ -175,7 +200,7 @@
             <p>生年月日</p>
         </th>
         <td>
-            <?php print($birthday)?>
+            <?php echo $birthday; ?>
         </td>
     </tr>
     <tr>
@@ -189,7 +214,7 @@
     <tr>
         <th>
             <p>その他</p>
-            <?php print($user_profile)?>
+            <?php echo $user_profile; ?>
         </th>
         <td>
 
@@ -209,7 +234,7 @@
             <p>身長</p>
         </th>
         <td>
-            <?php print($height)?> cm
+            <?php echo $height; ?> cm
         </td>
     </tr>
     <tr>
@@ -217,7 +242,7 @@
             <p>体重</p>
         </th>
         <td>
-            <?php print($weight)?> kg
+            <?php echo $weight; ?> kg
         </td>
     </tr>
     <tr>
@@ -225,7 +250,7 @@
             <p>愛用ブランド</p>
         </th>
         <td>
-            <?php print($brand)?>
+            <?php echo $brand; ?>
         </td>
     </tr>
     <tr>
@@ -233,7 +258,7 @@
             <p>服のサイズ</p>
         </th>
         <td>
-            <?php print($sizeSL)?>
+            <?php echo $sizeSL; ?>
         </td>
     </tr>
     <tr>
@@ -241,7 +266,7 @@
             <p>服の号数</p>
         </th>
         <td class="label-block">
-            <?php print($clothessize)?>
+            <?php echo $clothessize; ?>
         </td>
     </tr>
     <tr>
@@ -249,7 +274,7 @@
             <p>靴のサイズ</p>
         </th>
         <td>
-            <?php print($shoesssize)?> cm
+            <?php echo $shoesssize; ?> cm
         </td>
     </tr>
     <tr>
@@ -257,7 +282,7 @@
             <p>好きなテイスト</p>
         </th>
         <td class="label-block">
-            <?php print($liketast)?>
+            <?php echo $liketast; ?>
         </td>
     </tr>
     <tr>
@@ -265,7 +290,7 @@
             <p>苦手テイスト</p>
         </th>
         <td class="label-block">
-            <?php print($disliketast)?>
+            <?php echo $disliketast; ?>
         </td>
     </tr>
     <tr>
@@ -273,7 +298,7 @@
             <p>体型</p>
         </th>
         <td class="label-block">
-            <?php print($body_type)?>
+            <?php echo $body_type; ?>
         </td>
     </tr>
     <tr>
@@ -281,7 +306,7 @@
             <p>自己紹介</p>
         </th>
         <td>
-            <?php print($height)?><br>
+            <?php echo $height; ?><br>
         </td>
     </tr>
 </tbody>
