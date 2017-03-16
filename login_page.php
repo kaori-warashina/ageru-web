@@ -17,9 +17,9 @@ mysql_set_charset('utf8');
 $mailaddress = $_REQUEST['mailaddress'];
 $password   = $_REQUEST['password'];
 
-$result = mysql_query("SELECT * FROM `user_master` WHERE `mailaddress` =".$mailaddress." `password` ='". $password."'");
+$result = mysql_query("SELECT * FROM `user_master` WHERE `mailaddress` ='".$mailaddress."' `password` ='". $password."'");
 if (!$result) {
-die('ログインにが失敗しました。'.mysql_error());
+die('ログインに失敗しました。'.mysql_error());
 }elseif ($result) {
 	session_start() ;
 	$_SESSION['user_id'] = $row[user_id];

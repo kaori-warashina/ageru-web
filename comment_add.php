@@ -1,3 +1,5 @@
+<!-- 使わない -->
+
 <?php
 session_start();
 $user_id = $_SESSION[user_id];
@@ -14,9 +16,9 @@ die('データベース選択失敗です。'.mysql_error());
 }
 
 mysql_set_charset('utf8');
-$item_id = $_REQUEST['item_id'];
+$item_id = $_GET[item_id];
 $comment_text   = $_REQUEST['comment_text'];
-$user_id = $_REQUEST['user_id'];
+$user_id = $_SESSION[user_id];
 
 
 $result = mysql_query("INSERT INTO comment(	`comment_item_id`, `user_id`, `comment_text`) VALUES('".$item_id."', '".$user_id."', '".$comment_text."')");

@@ -13,10 +13,11 @@ include 'header.php';?>
 <div class="arrow-width">
 <div class="register-content">
 <div class="login-register">
-<form class="form-register" action="register-confirm.php" method="post">
+<form class="form-register" action="register-confirm.php" method="post" name="form" onsubmit="return validate()">
 <table>
 <tbody>
 <tr>
+
     <th>
         <p>メールアドレス</p>
     </th>
@@ -412,9 +413,7 @@ include 'header.php';?>
 </form>
 </div> <!-- selfinformation -->
 <div class="registration">
-<button type="submit" name="button">
-<a href="register-confirm.php">
-登録する</a></button>
+<button type="submit" name="button">登録する</button>
 
 
 </div>

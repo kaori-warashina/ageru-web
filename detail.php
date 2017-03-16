@@ -114,14 +114,38 @@ while ($row = mysql_fetch_assoc($result)) {
         </div>
     </div> <!-- top-comment -->
 <?php }?>
-<form class="form-block" action="comment_add.php" method="post">
+<form class="form-block" action="" method="post">
 <div class="comment-write">
 <p>コメントを投稿する</p>
 <textarea name="comment_text" rows="" cols=""></textarea>
 </div>
 <div class="comment-sent">
-<button type="submit" name="item_id" value="<?php echo $_GET['item_id']?>">投稿する</button>
-<?php echo $_SERVER['QUERY_STRING'];?>
+<button type="submit" name="comment" ">投稿する</button>
+<!-- <?php echo $_SERVER['QUERY_STRING'];?> -->
+<?php
+    if (isset($_POST["comment"])) {
+        $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
+        if (!$link) {
+        die('接続失敗です。'.mysql_error());
+        }
+        $db_selected = mysql_select_db('ageru_web', $link);
+        if (!$db_selected) {
+        die('データベース選択失敗です。'.mysql_error());
+        }
+        mysql_set_charset('utf8');
+        $item_id = $_GET[item_id];
+        $comment_text   = $_REQUEST['comment_text'];
+        $user_id = $_SESSION[user_id];
+
+        $result = mysql_query("INSERT INTO comment( `comment_item_id`, `user_id`, `comment_text`) VALUES('".$item_id."', '".$user_id."', '".$comment_text."')");
+
+        if (!$result) {
+          exit('データを登録できませんでした。'.mysql_error());
+        }elseif ($result) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        }
+    }
+?>
 </div>
 </form>
 </div> <!-- comment-content -->
