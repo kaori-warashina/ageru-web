@@ -129,7 +129,11 @@ document.getElementById("txt").innerHTML=txt;
 }
 -->
 </script>
-<button type="button" action="flg_change.php" name="button" method="post" name="flg_change_button" value="1" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
+<form action="flg_change.php" method="post">
+<input type="hidden" name="item_id" value="<?php print($row['item_id']) ?>">
+<input type="hidden" name="userid" value="<?php print($user_id) ?>">
+<button type="button" action="flg_change.php" method="post" name="flg_change_button" value="1" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
+</form>
 </div>
 </div> <!-- clothes-information -->
 </li>
