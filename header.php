@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user_id = $_SESSION[user_id];
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,7 +41,7 @@
 </div>
 <div class="header-right">
     <ul>
-        <li><a href="mypage.php?user_id=4">ほしい</a><span>|</span></li>
+        <li><a href="mypage.php">ほしい</a><span>|</span></li>
         <li><a href="login.php">ログイン</a><span>|</span></li>
         <li><a href="register.php">新規登録</a></li>
         <li>
