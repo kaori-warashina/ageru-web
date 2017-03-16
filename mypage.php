@@ -53,11 +53,7 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <dd>
 <dl class="borrow">
 <dt>今借りているアイテムの数</dt>
-<dd><?php
-$result = mysql_query("SELECT COUNT(*) FROM `item` WHERE `item_request_flg`=1 AND `item_user`=".$user_id);
-if (!$result) {die('クエリーが失敗しました。'.mysql_error());}
-while ($row = mysql_fetch_assoc($result)) {
-?><?php print$row ?></dd>
+<dd>４アイテム</dd>
 </dl>
 <dl class="borrow">
 <dt>今借りれるアイテムの数</dt>
@@ -85,7 +81,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <div class="clothes-guid">
     <p data-count="12"><?php print$row['item_name']?></p>
     <p><a href="#"><?php print$row['item_brand']?></a></p>
-    <button type="button" name="button" class="item-information">	<?php print' <a href="detail.php?item_id='.$row['item_id'].'">'?>商品詳細</a></button>
+    <button type="button" name="button" class="item-information">   <?php print' <a href="detail.php?item_id='.$row['item_id'].'">'?>商品詳細</a></button>
     <button type="button" name="button" class="request"><img src="/image/img_heart.png" width="18" height="15">リクエスト中</button>
 </div>
 </div> <!-- clothes-information -->
