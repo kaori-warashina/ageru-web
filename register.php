@@ -409,7 +409,7 @@ include 'header.php';?>
 </tr>
 </tbody>
 </table>
-</div>>
+</div>
 </div> <!-- selfinformation -->
 <div class="registration">
 <button type="submit" name="button">登録する</button>
