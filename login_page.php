@@ -20,8 +20,9 @@ $password   = $_REQUEST['password'];
 $result = mysql_query("SELECT * FROM user_master WHERE mailaddress = '$mailaddress' AND password = '$password'");
 if (!$result) {die('ログインに失敗しました。'.mysql_error());}
 
-	$row = mysql_fetch_assoc($result);
-	$_SESSION['user_id'] = $row['user_id'];
+$row = mysql_fetch_assoc($result);
+$_SESSION['user_id'] = $row['user_id'];
+header('Location: http://ageru.services/');
 ?>
 <?php echo $row['user_id'];?>
 </div> <!-- bottom-content -->

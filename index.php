@@ -1,4 +1,8 @@
-<?php include 'header.php';?>
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
+include 'header.php';?>
+
 <div class="top-bg-content">
         <div class="top-main arrow-width">
             <div class="catchcopy">

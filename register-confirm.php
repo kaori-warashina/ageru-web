@@ -275,7 +275,7 @@
 <div class="registration">
 <?php
 foreach (array_keys($_POST) as $key) {
-    $_SESSION[$key] = $_POST['$key];
+    $_SESSION[$key] = $_POST['$key'];
 }
 ?>
 <button type="submit" name="submit">登録する</button>

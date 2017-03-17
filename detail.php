@@ -139,7 +139,7 @@ while ($row = mysql_fetch_assoc($result)) {
         mysql_set_charset('utf8');
         $item_id = $_GET[item_id];
         $comment_text   = $_REQUEST['comment_text'];
-        $user_id = $_SESSION[user_id];
+        $user_id = $_SESSION['user_id'];
 
         $result = mysql_query("INSERT INTO comment( `comment_item_id`, `user_id`, `comment_text`) VALUES('".$item_id."', '".$user_id."', '".$comment_text."')");
 

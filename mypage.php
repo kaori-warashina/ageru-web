@@ -93,7 +93,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <div class="waiting request-content">
 <h3>リクエスト承認待ちのアイテム</h3>
 <?php
-$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=2 AND `item_user`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=2 AND `item_user`=".$_SESSION['user_id']);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -125,7 +125,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <h3>発送待ちの商品</h3>
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=3 AND `item_user`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=3 AND `item_user`=".$_SESSION['user_id']);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -203,7 +203,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <h3>過去の取引履歴</h3>
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=4 AND `item_user`=".$_GET[user_id]);
+$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=4 AND `item_user`=".$_SESSION['user_id']);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
