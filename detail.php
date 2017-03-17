@@ -154,4 +154,5 @@ while ($row = mysql_fetch_assoc($result)) {
 </form>
 </div> <!-- comment-content -->
 </div> <!-- bottom-content -->
+</div>
 <?php include 'footer.php';?>

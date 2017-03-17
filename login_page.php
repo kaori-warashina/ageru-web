@@ -22,8 +22,14 @@ if (!$result) {die('ログインに失敗しました。'.mysql_error());}
 
 $row = mysql_fetch_assoc($result);
 $_SESSION['user_id'] = $row['user_id'];
-header('Location: http://ageru.services/');
+
 ?>
-<?php echo $row['user_id'];?>
+
+<div class="arrow-width">
+
+    <p class="co-p"><?php echo $row['user_id'];?>ログインが完了しました。</p>
+    <p class="return-link home"><a href="/mypage.php">マイページへ</a></p>
+
+</div> <!-- arrow-width -->
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
