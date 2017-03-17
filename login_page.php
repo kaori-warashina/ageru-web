@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user_id = $_SESSION[user_id];
+
 include 'header.php';?>
 <div class="middle">
 <?php
@@ -18,13 +18,9 @@ $mailaddress = $_REQUEST['mailaddress'];
 $password   = $_REQUEST['password'];
 
 $result = mysql_query("SELECT * FROM user_master WHERE mailaddress = '$mailaddress' AND password = '$password'");
-if (!$result) {
-die('ログインに失敗しました。'.mysql_error());
-}elseif ($result) {
-	session_start() ;
-	$_SESSION['user_id'] = $row[user_id];
-}
+if (!$result) {die('ログインに失敗しました。'.mysql_error());}
+	$_SESSION['user_id'] = $row['user_id'];
 ?>
-
+<?php echo $row['user_id'];?>
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>

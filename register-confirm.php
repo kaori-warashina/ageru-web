@@ -16,31 +16,31 @@
 <div class="login-register">
 <?php 
     // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // $mailaddress = $_POST['mailaddress'];
-    // $password   = $_POST['password'];
-    // $user_name_first = $_POST['user_name_first'];
-    // $user_name_family = $_POST['user_name_family'];
-    // $user_nickname = $_POST['user_nickname'];
-    // $user_profile = $_POST['user_profile']
-    // $user_birthday = $_POST['user_birthday'];
-    // $user_sex = $_POST['user_sex'];
-    // $user_area   = $_POST['user_area'];
-    // $city_num = $_POST['city_num'];
-    // $address1   = $_POST['address1'];
-    // $address2 = $_POST['address2'];
-    // $address3   = $_POST['address3'];
-    // $phone = $_POST['phone'];
-    // $birthday   = $_POST['birthday'];
-    // $body_type = $_POST['body_type'];
-    // $body_size   = $_POST['body_size'];
-    // $liketast = $_POST['liketast'];
-    // $disliketast   = $_POST['disliketast'];
-    // $brand = $_POST['brand'];
-    // $height   = $_POST['height'];
-    // $weight   = $_POST['weight'];
-    // $sizeSL = $_POST['sizeSL'];
-    // $clothessize   = $_POST['clothessize'];
-    // $shoesssize = $_POST['shoesssize'];
+    $mailaddress = $_POST['mailaddress'];
+    $password   = $_POST['password'];
+    $user_name_first = $_POST['user_name_first'];
+    $user_name_family = $_POST['user_name_family'];
+    $user_nickname = $_POST['user_nickname'];
+    $user_profile = $_POST['user_profile']
+    $user_birthday = $_POST['user_birthday'];
+    $user_sex = $_POST['user_sex'];
+    $user_area   = $_POST['user_area'];
+    $city_num = $_POST['city_num'];
+    $address1   = $_POST['address1'];
+    $address2 = $_POST['address2'];
+    $address3   = $_POST['address3'];
+    $phone = $_POST['phone'];
+    $birthday   = $_POST['birthday'];
+    $body_type = $_POST['body_type'];
+    $body_size   = $_POST['body_size'];
+    $liketast = $_POST['liketast'];
+    $disliketast   = $_POST['disliketast'];
+    $brand = $_POST['brand'];
+    $height   = $_POST['height'];
+    $weight   = $_POST['weight'];
+    $sizeSL = $_POST['sizeSL'];
+    $clothessize   = $_POST['clothessize'];
+    $shoesssize = $_POST['shoesssize'];
     // };
 
  // if (isset($_POST["submit"])) {
@@ -51,31 +51,7 @@
  //    (".$mailaddress."', '".$password."', '".$user_birthday."', '".$user_name_first."', '".$user_name_family."', '".$user_nickname."', '".$user_image."', '".$user_profile."', '".$user_birthday."', '".$user_sex."', '".$user_area."', '".$city_num."', '".$address1."', '".$address2."', '".$address3."', '".$phone."', '".$birthday."', '".$body_type."', '".$body_size."', '".$liketast."', '".$disliketast."', '".$brand."', '".$height."', '".$weight."', '".$sizeSL."', '".$clothessize."')");
  //     };
 ?>
-<input type="hidden" name="name" value="<?php echo $mailaddress ; ?>">
-<input type="hidden" name="name" value="<?php echo $password; ?>">
-<input type="hidden" name="name" value="<?php echo $user_name_first; ?>">
-<input type="hidden" name="name" value="<?php echo $user_name_family; ?>">
-<input type="hidden" name="name" value="<?php echo $user_nickname; ?>">
-<input type="hidden" name="name" value="<?php echo $user_profile; ?>">
-<input type="hidden" name="name" value="<?php echo $user_birthday; ?>">
-<input type="hidden" name="name" value="<?php echo $user_sex; ?>">
-<input type="hidden" name="name" value="<?php echo $user_area; ?>">
-<input type="hidden" name="name" value="<?php echo $city_num; ?>">
-<input type="hidden" name="name" value="<?php echo $address1; ?>">
-<input type="hidden" name="name" value="<?php echo $address2; ?>">
-<input type="hidden" name="name" value="<?php echo $address3; ?>">
-<input type="hidden" name="name" value="<?php echo $phone; ?>">
-<input type="hidden" name="name" value="<?php echo $birthday; ?>">
-<input type="hidden" name="name" value="<?php echo $body_type; ?>">
-<input type="hidden" name="name" value="<?php echo $body_size; ?>">
-<input type="hidden" name="name" value="<?php echo $liketast; ?>">
-<input type="hidden" name="name" value="<?php echo $disliketast; ?>">
-<input type="hidden" name="name" value="<?php echo $brand; ?>">
-<input type="hidden" name="name" value="<?php echo $height; ?>">
-<input type="hidden" name="name" value="<?php echo $weight; ?>">
-<input type="hidden" name="name" value="<?php echo $sizeSL; ?>">
-<input type="hidden" name="name" value="<?php echo $clothessize; ?>">
-<input type="hidden" name="name" value="<?php echo $shoesssize; ?>">
+
 
 <table>
 <tbody>

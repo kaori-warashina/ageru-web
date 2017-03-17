@@ -13,7 +13,8 @@ include 'header.php';?>
 <div class="arrow-width">
 <div class="register-content">
 <div class="login-register">
-<form class="form-register" action="register-confirm.php" method="post"  onsubmit="return validate()">
+<form class="form-register" action="register-confirm.php" method="post"  >
+<div class="form-register">
 <table>
 <tbody>
 <tr>
@@ -45,7 +46,8 @@ include 'header.php';?>
 </table>
 </div>
 </div>
-
+</div>
+<div class="form-register">
 <div class="register-content">
 <div class="necessity">
 <table>
@@ -290,10 +292,10 @@ include 'header.php';?>
 </table>
 </div> <!-- necessity -->
 </div> <!-- register-content -->
-
+</div>>
 <div class="register-content">
 <div class="selfinformation">
-
+<div class="form-register">
 <table>
 <tbody>
 <tr>
@@ -407,7 +409,7 @@ include 'header.php';?>
 </tr>
 </tbody>
 </table>
-
+</div>>
 </div> <!-- selfinformation -->
 <div class="registration">
 <button type="submit" name="button">登録する</button>
