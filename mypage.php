@@ -112,8 +112,11 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
         <a href="#"><span><?php echo '<a href="userpage.php?user_id='.$row['user_id'].'">'.$row['user_nickname'].'</a>'?></span>さん</a>
     </div> <!-- username-top -->
+    <form action="flg_change.php" method="post">
+    <input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
     <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="yes" value="1">はい</button>
     <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="no" value="0">いいえ</button>
+    </form>
 </div>
 </div> <!-- clothes-information -->
 </li>
@@ -151,7 +154,11 @@ while ($row = mysql_fetch_assoc($result)) {
                 <?php print($row['phone'])?>
             </p>
         </div>
-<button type="submit" action="flg_change.php" name="flg_change_button" class="item-information" value="5">発送完了</button>
+<form action="flg_change.php" method="post">
+<input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
+<button type="submit" name="flg_change_button" class="item-information" value="5">発送完了</button>
+</form>
+
 </div>
 </div> <!-- clothes-information -->
 </li>
@@ -190,7 +197,11 @@ while ($row = mysql_fetch_assoc($result)) {
                 <?php print($row['phone'])?>
             </p>
         </div>
+
+<form action="flg_change.php" method="post">
+<input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
 <button type="submit" action="flg_change.php" name="button" class="item-information" method="post" value="0">到着通知</button>
+</form>
 </div>
 </div> <!-- clothes-information -->
 </li>

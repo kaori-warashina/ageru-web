@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$user_id = $_SESSION[user_id];
+$user_id = $_SESSION['user_id']
 include 'header.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
@@ -72,8 +72,7 @@ document.getElementById("txt").innerHTML=txt;
 </script>
 	        <div class="right-bottom"><a href="javascript:void(0)" onclick="ChangeTxt(txt1); return false;">
                 <form action="flg_change.php" method="post">
-                <input type="hidden" name="item_id" value="<?php print($row['item_id']) ?>">
-                <input type="hidden" name="userid" value="<?php $user_id ?>">
+                <input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
 	            <button type="submit" name="flg_change_button" value="1" onClick><div id="txt"><img src="/image/ageru_like.png" width="25" height="20">この商品をリクエストする</div></button></a>
                 </form>
 	        </div>
@@ -142,11 +141,11 @@ while ($row = mysql_fetch_assoc($result)) {
         $user_id = $_SESSION['user_id'];
 
         $result = mysql_query("INSERT INTO comment( `comment_item_id`, `user_id`, `comment_text`) VALUES('".$item_id."', '".$user_id."', '".$comment_text."')");
-
+        $row = mysql_fetch_assoc($result);
         if (!$result) {
           exit('データを登録できませんでした。'.mysql_error());
         }elseif ($result) {
-        header("Location: " . $_SERVER['PHP_SELF']);
+        header("Location: http://ageru.services/detail.php" .$_GET[item_id]);
         }
     }
 ?>
@@ -154,5 +153,6 @@ while ($row = mysql_fetch_assoc($result)) {
 </form>
 </div> <!-- comment-content -->
 </div> <!-- bottom-content -->
+</div>
 </div>
 <?php include 'footer.php';?>

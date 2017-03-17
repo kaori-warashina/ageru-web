@@ -56,11 +56,25 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 </tr>
 <tr>
 <th>好きなテイスト</th>
-<td><?php print$row['liketast']?></td>
+<td><?php$result = mysql_query("SELECT * FROM `item_taste` WHERE`item_taste_id`=".$row['liketast']);
+if (!$result) {
+die('クエリーが失敗しました。'.mysql_error());
+}
+while ($row = mysql_fetch_assoc($result)) {
+ $liketast = $row['item_taste_name'];
+}
+print$liketast?></td>
 </tr>
 <tr>
 <th>苦手なテイスト</th>
-<td><?php print$row['disliketast']?></td>
+<td><?php$result = mysql_query("SELECT * FROM `item_taste` WHERE`item_taste_id`=".$row['disliketast']);
+if (!$result) {
+die('クエリーが失敗しました。'.mysql_error());
+}
+while ($row = mysql_fetch_assoc($result)) {
+ $disliketast = $row['item_taste_name'];
+}
+print$disliketast?></td>
 </tr>
 <tr>
 <th>自己紹介</th>
@@ -130,8 +144,7 @@ document.getElementById("txt").innerHTML=txt;
 -->
 </script>
 <form action="flg_change.php" method="post">
-<input type="hidden" name="item_id" value="<?php print($row['item_id']) ?>">
-<input type="hidden" name="userid" value="<?php print($user_id) ?>">
+<input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
 <button type="button" action="flg_change.php" method="post" name="flg_change_button" value="1" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
 </form>
 </div>
