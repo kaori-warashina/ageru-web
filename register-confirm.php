@@ -14,31 +14,31 @@
 <form class="form-register confirm" action="register_edit.php" method="post">
 <div class="register-content">
 <div class="login-register">
-<input type="hidden" name="name" value="<?php echo $mailaddress ; ?>">
-<input type="hidden" name="name" value="<?php echo $password; ?>">
-<input type="hidden" name="name" value="<?php echo $user_name_first; ?>">
-<input type="hidden" name="name" value="<?php echo $user_name_family; ?>">
-<input type="hidden" name="name" value="<?php echo $user_nickname; ?>">
-<input type="hidden" name="name" value="<?php echo $user_profile; ?>">
-<input type="hidden" name="name" value="<?php echo $user_birthday; ?>">
-<input type="hidden" name="name" value="<?php echo $user_sex; ?>">
-<input type="hidden" name="name" value="<?php echo $user_area; ?>">
-<input type="hidden" name="name" value="<?php echo $city_num; ?>">
-<input type="hidden" name="name" value="<?php echo $address1; ?>">
-<input type="hidden" name="name" value="<?php echo $address2; ?>">
-<input type="hidden" name="name" value="<?php echo $address3; ?>">
-<input type="hidden" name="name" value="<?php echo $phone; ?>">
-<input type="hidden" name="name" value="<?php echo $birthday; ?>">
-<input type="hidden" name="name" value="<?php echo $body_type; ?>">
-<input type="hidden" name="name" value="<?php echo $body_size; ?>">
-<input type="hidden" name="name" value="<?php echo $liketast; ?>">
-<input type="hidden" name="name" value="<?php echo $disliketast; ?>">
-<input type="hidden" name="name" value="<?php echo $brand; ?>">
-<input type="hidden" name="name" value="<?php echo $height; ?>">
-<input type="hidden" name="name" value="<?php echo $weight; ?>">
-<input type="hidden" name="name" value="<?php echo $sizeSL; ?>">
-<input type="hidden" name="name" value="<?php echo $clothessize; ?>">
-<input type="hidden" name="name" value="<?php echo $shoesssize; ?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$mailaddress'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$password'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_name_first'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_name_family'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_nickname'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_profile'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_birthday'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_sex'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$user_area'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$city_num'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$address1'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$address2'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$address3'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$phone'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$birthday'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$body_type'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$body_size'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$liketast'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$disliketast'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$brand'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$height'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$weight'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$sizeSL'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$clothessize'];?>">
+<input type="hidden" name="name" value="<?php echo $_POST['$shoesssize'];?>">
 
 <table>
 <tbody>
