@@ -2,6 +2,7 @@
 session_start();
 $user_id = $_SESSION['user_id'];
 include 'header.php';?>
+
 <div class="middle">
 <div class="middle-guide arrow-width">
 <ul>
@@ -20,7 +21,8 @@ die('データベース選択失敗です。'.mysql_error());
 mysql_set_charset('utf8');
 $result = mysql_query("SELECT * FROM `user_master` WHERE `user_id`=".$user_id);
 if (!$result) {
-die('クエリーが失敗しました。'.mysql_error());
+die('<p class="co-p">ログイン出来ませんでした</p>
+    <p class="return-link home"><a href="login.php">ログインへ</a></p><br><br>');
 }
 while ($row = mysql_fetch_assoc($result)) {
 print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
@@ -61,13 +63,39 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 </dl>
 </dd>
 </dl>
+<div class="pending request-content">
+<h3>所持アイテム</h3>
+<!-- clothes-information max5 -->
+<ul class="clearfix">
+<?php
+$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=0 AND `item_user`=".$user_id);
+if (!$result) {
+die('クエリーが失敗しました。'.mysql_error());
+}
+while ($row = mysql_fetch_assoc($result)) {
+?>
+<li>
+<div class="clothes-information match-height clearfix">
+<div class="clothes-image">
+<?php print' <img src="/media/'.$row['item_image1'].'">'?>
+</div>
+<div class="clothes-guid">
+    <p data-count="12"><?php print$row['item_name']?></p>
+    <p><a href="#"><?php print$row['item_brand']?></a></p>
+    <button type="button" name="button" class="item-information">   <?php print' <a href="detail.php?item_id='.$row['item_id'].'">'?>商品詳細</a></button>
+</div>
+</div> <!-- clothes-information -->
+</li>
+<?php }?>
+</ul>
+</div> <!-- pending -->
 
 <div class="pending request-content">
 <h3>リクエスト申請中のアイテム</h3>
 <!-- clothes-information max5 -->
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=1 AND `item_user`=".$user_id);
+$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=1 AND `item_request_user`=".$user_id);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -114,7 +142,7 @@ while ($row = mysql_fetch_assoc($result)) {
     </div> <!-- username-top -->
     <form action="flg_change.php" method="post">
     <input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
-    <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="yes" value="1">はい</button>
+    <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="yes" value="3">はい</button>
     <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="no" value="0">いいえ</button>
     </form>
 </div>
@@ -171,7 +199,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <h3>到着待ちの商品</h3>
 <ul class="clearfix">
 <?php
-$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=5 AND `item_user`=".$user_id);
+$result = mysql_query("SELECT * FROM `item` INNER JOIN `user_master` ON `item`.`item_user`=`user_master`.`user_id` WHERE `item_request_flg`=5 AND `item_request_user`=".$user_id);
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
@@ -198,9 +226,9 @@ while ($row = mysql_fetch_assoc($result)) {
             </p>
         </div>
 
-<form action="flg_change.php" method="post">
+<form action="flg_change_get.php" method="post">
 <input type="hidden" name="item_id" value="<?php print$row['item_id'] ?>">
-<button type="submit" action="flg_change.php" name="button" class="item-information" method="post" value="0">到着通知</button>
+<button type="submit" name="flg_change_button" class="item-information" method="post" value="0">到着通知</button>
 </form>
 </div>
 </div> <!-- clothes-information -->
@@ -232,7 +260,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
         <span><?php echo '<a href="userpage.php?user_id='.$row['user_id'].'">'.$row['user_nickname'].'</a>'?></span>さん
     </div> <!-- username-top -->
-    <button type="submit" action="flg_change.php" name="flg_change_button" method="post" class="check" value="0">受け取り完了</button>
+    <button type="button" name="button" class="item-information">   <?php print' <a href="detail.php?item_id='.$row['item_id'].'">'?>商品詳細</a></button>
 </div>
 </div> <!-- clothes-information -->
 </li>

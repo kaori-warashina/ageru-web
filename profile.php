@@ -4,10 +4,21 @@ $user_id = $_SESSION[user_id];
 include 'header.php'; ?>
 <div class="middle">
 <?php
+$link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
+if (!$link) {
+die('接続失敗です。'.mysql_error());
+}
+$db_selected = mysql_select_db('ageru_web', $link);
+if (!$db_selected) {
+die('データベース選択失敗です。'.mysql_error());
+}
+mysql_set_charset('utf8');
 $result = mysql_query("SELECT * FROM `user_master` WHERE `user_id`=".$user_id);
 if (!$result) {
-die('クエリーが失敗しました。'.mysql_error());
+die('<p class="co-p">ログイン出来ませんでした</p>
+    <p class="return-link home"><a href="login.php">ログインへ</a></p><br><br>');
 }
+$row = mysql_fetch_assoc($result)
 ?>
 
     <div class="middle-guide arrow-width">

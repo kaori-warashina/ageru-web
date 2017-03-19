@@ -26,10 +26,13 @@ $_SESSION['user_id'] = $row['user_id'];
 ?>
 
 <div class="arrow-width">
-
-    <p class="co-p"><?php echo $row['user_id'];?>ログインが完了しました。</p>
-    <p class="return-link home"><a href="/mypage.php">マイページへ</a></p>
-
+<?php if(empty($row['user_id'])){ ?>
+    <p class="co-p">ログイン出来ませんでした</p>
+    <p class="return-link home"><a href="login.php">ログインへ</a></p><br><br>
+<?php }elseif (!empty($row['user_id'])) {?>
+    <p class="co-p">ログインが完了しました。</p>
+    <p class="return-link home"><a href="/mypage.php">マイページへ</a></p><br><br>
+<?php } ?>
 </div> <!-- arrow-width -->
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>

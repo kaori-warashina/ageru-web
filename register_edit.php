@@ -1,4 +1,4 @@
-<?php
+	<?php
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
 die('接続失敗です。'.mysql_error());
@@ -41,7 +41,7 @@ $result = mysql_query("
 	INSERT INTO `ageru_web`.`user_master` 
 	(`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
 	VALUES 
-	($mailaddress,$password,$user_birthday,$user_name_first,$user_name_family,$user_nickname,$user_image,$user_profile,$user_birthday,$user_sex,$user_area,$city_num,$address1,$address2,$address3,$phone,$birthday,$body_type,$body_size,$liketast,$disliketast,$brand,$height,$weight,$sizeSL,$clothessize)");
+	($_POST['mailaddress'],$_POST['password'],$_POST['user_birthday'],$_POST['user_name_first'],$_POST['user_name_family'],$_POST['user_nickname'],$_POST['user_image'],$_POST['user_profile'],$_POST['user_birthday'],$_POST['user_sex'],$_POST['user_area'],$_POST['city_num'],$_POST['address1'],$_POST['address2'],$_POST['address3'],$_POST['phone'],$_POST['birthday'],$_POST['body_type'],$_POST['body_size'],$_POST['liketast'],$_POST['disliketast'],$_POST['brand'],$_POST['height'],$_POST['weight'],$_POST['sizeSL'],$_POST['clothessize'])");
 
 if (!$result) {
 die('ログインにが失敗しました。'.mysql_error());

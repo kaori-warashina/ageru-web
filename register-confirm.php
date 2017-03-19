@@ -273,15 +273,38 @@
 </table>
 </div> <!-- selfinformation -->
 <div class="registration">
-<?php
-foreach (array_keys($_POST) as $key) {
-    $_SESSION[$key] = $_POST['$key'];
-}
-?>
-<button type="submit" name="submit">登録する</button>
+<form class="form-block" action="" method="post">登録する</button>
 </div>
 </div> <!-- register-content -->
 </form>
+
+<?php
+    if (isset($_POST["comment"])) {
+        $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
+        if (!$link) {
+        die('接続失敗です。'.mysql_error());
+        }
+        $db_selected = mysql_select_db('ageru_web', $link);
+        if (!$db_selected) {
+        die('データベース選択失敗です。'.mysql_error());
+        }
+        mysql_set_charset('utf8');
+        $item_id = $_GET[item_id];
+        $comment_text   = $_REQUEST['comment_text'];
+        $user_id = $_SESSION['user_id'];
+        $result = mysql_query($result = mysql_query("
+        INSERT INTO user_master 
+        (`mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `birthday`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `sizeSL`, `clothessize`, `shoesssize`)
+        VALUES 
+        ($_POST['mailaddress'],$_POST['password'],$_POST['user_birthday'],$_POST['user_name_first'],$_POST['user_name_family'],$_POST['user_nickname'],$_POST['user_image'],$_POST['user_profile'],$_POST['user_birthday'],$_POST['user_sex'],$_POST['user_area'],$_POST['city_num'],$_POST['address1'],$_POST['address2'],$_POST['address3'],$_POST['phone'],$_POST['birthday'],$_POST['body_type'],$_POST['body_size'],$_POST['liketast'],$_POST['disliketast'],$_POST['brand'],$_POST['height'],$_POST['weight'],$_POST['sizeSL'],$_POST['clothessize'])");
+);
+        if (!$result) {
+          exit('データを登録できませんでした。'.mysql_error());
+        }elseif ($result) {
+        header("Location:./register-complete.php" . $_SERVER['PHP_SELF']);
+        }
+    }
+?>
 <p class="return-link"><a href="/register.php">登録画面に戻る</a></p>
 </div> <!-- arrow-width -->
 <?php include 'footer.php';?>
