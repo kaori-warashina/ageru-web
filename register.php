@@ -280,19 +280,19 @@ include 'header.php';?>
         <span>選択されていません</span>
     </td>
 </tr>
-<tr>
+<!-- <tr>
     <th>
         <p>その他</p>
     </th>
     <td>
         <textarea name="name" class="message"></textarea>
     </td>
-</tr>
+</tr> -->
 </tbody>
 </table>
 </div> <!-- necessity -->
 </div> <!-- register-content -->
-</div>>
+</div>
 <div class="register-content">
 <div class="selfinformation">
 <div class="form-register">
