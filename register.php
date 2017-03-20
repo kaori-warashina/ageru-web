@@ -329,11 +329,11 @@ include 'header.php';?>
         <p>服のサイズ</p>
     </th>
     <td>
-        <label><input type="radio" name="sizeSL" value="1"> SS</label>
-        <label><input type="radio" name="sizeSL" value="2"> S</label>
-        <label><input type="radio" name="sizeSL" value="3"> M</label>
-        <label><input type="radio" name="sizeSL" value="4"> L</label>
-        <label><input type="radio" name="sizeSL" value="5"> XL</label>
+        <label><input type="radio" name="body_size" value="1"> SS</label>
+        <label><input type="radio" name="body_size" value="2"> S</label>
+        <label><input type="radio" name="body_size" value="3"> M</label>
+        <label><input type="radio" name="body_size" value="4"> L</label>
+        <label><input type="radio" name="body_size" value="5"> XL</label>
     </td>
 </tr>
 <tr>

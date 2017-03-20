@@ -11,7 +11,7 @@
 
 <div class="arrow-width">
 <p class="co-p">以下の内容で登録します。よろしいですか？</p>
-<form class="form-register confirm" action="register_edit.php" method="post">
+<form class="form-register confirm" action="" method="post">
 <div class="register-content">
 <div class="login-register">
 
@@ -213,8 +213,10 @@
             <p>服のサイズ</p>
         </th>
         <td>
-            <?php print($_REQUEST['sizeSL']);?>
-            <input type="hidden" name="sizeSL" value="<?php echo $_POST['$sizeSL'];?>">
+            <?php print($_REQUEST['body_size']);
+            $body_size_num = intval($_REQUEST['body_size']);
+            ?>
+            <input type="hidden" name="body_size" value="<?php echo $_POST['$body_size'];?>">
         </td>
     </tr>
     <tr>
@@ -258,7 +260,9 @@
             <p>体型</p>
         </th>
         <td class="label-block">
-            <?php print($_REQUEST['body_type']);?>
+            <?php print($_REQUEST['body_type']);
+            $body_type_num = intval($_REQUEST['body_type']);
+            ?>
             <input type="hidden" name="body_type" value="<?php echo $_POST['$body_type'];?>">
         </td>
     </tr>
@@ -267,11 +271,29 @@
 </table>
 </div> <!-- selfinformation -->
 <div class="registration">
-<button type="submit" action=""  name="registerbutton" value="1">
+<button type="submit" name="registerbutton" >
 登録する</button>
 </div>
 </div> <!-- register-content -->
-
+<?php
+    if (isset($_POST["registerbutton"])) {
+        $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
+        if (!$link) {
+        die('接続失敗です。'.mysql_error());
+        }
+        $db_selected = mysql_select_db('ageru_web', $link);
+        if (!$db_selected) {
+        die('データベース選択失敗です。'.mysql_error());
+        }
+        mysql_set_charset('utf8');
+        $result = mysql_query("INSERT INTO `ageru_web`.`user_master` (`user_id`, `mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `clothessize`, `shoesssize`, `rent_item1`, `rent_item2`, `rent_item3`, `rent_item4`, `rent_item5`) VALUES (NULL, '".$_REQUEST['mailaddress']."', '".$_REQUEST['password']."', '".$_REQUEST['user_name_first']."', '".$_REQUEST['user_name_family']."', '".$_REQUEST['user_nickname']."', '".$_REQUEST['user_image']."', '".$_REQUEST['user_profile']."', '".$_REQUEST['user_url']."', '".$_REQUEST['user_birthday']."', '".$_REQUEST['user_sex']."', '".$_REQUEST['user_area']."', '".$_REQUEST['city_num']."', '".$_REQUEST['address1']."', '".$_REQUEST['address2']."', '".$_REQUEST['address3']."', '".$_REQUEST['phone']."','".$body_type_num."', '".$body_size_num."', '".$_REQUEST['liketast']."', '".$_REQUEST['disliketast']."', '".$_REQUEST['brand']."', '".$_REQUEST['height']."', '".$_REQUEST['weight']."', '".$_REQUEST['clothessize']."', '".$_REQUEST['shoesssize']."', NULL, NULL, NULL, NULL, NULL)");
+        if (!$result) {
+          exit('データを登録できませんでした。<p class="return-link"><a href="/register.php">登録画面に戻る</a></p>'.mysql_error());
+        }elseif ($result) {
+        header("Location: ./register-complete.php" );
+        }
+    }
+?>
 </form>
 
 <p class="return-link"><a href="/register.php">登録画面に戻る</a></p>
