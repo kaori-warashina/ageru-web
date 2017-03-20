@@ -1,3 +1,6 @@
+<!-- 使わない -->
+
+
 <?php include 'header.php';?>
 <div class="middle">
 <div class="middle-guide arrow-width">
