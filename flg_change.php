@@ -30,7 +30,8 @@ $row = mysql_fetch_assoc($result);
 
 header("Location: ./mypage.php" );
 ?>
-
+    <p class="co-p">リクエストが完了しました。</p>
+    <p class="return-link home"><a href="/mypage.php">マイページへ</a></p><br><br>
 </div> <!-- arrow-width -->
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
