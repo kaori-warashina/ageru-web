@@ -11,7 +11,7 @@
 
 <div class="arrow-width">
 <p class="co-p">以下の内容で登録します。よろしいですか？</p>
-<form class="form-register confirm" action="" method="post">
+<form class="form-register confirm" action="register-complete.php" method="post">
 <div class="register-content">
 <div class="login-register">
 
@@ -293,7 +293,7 @@
 登録する</button>
 </div>
 </div> <!-- register-content -->
-<?php
+<!-- <?php
     if (isset($_POST["registerbutton"])) {
         $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
         if (!$link) {
@@ -309,7 +309,7 @@
           exit('データを登録できませんでした。<p class="return-link"><a href="/register.php">登録画面に戻る</a></p><br><br>'.mysql_error());
         }elseif ($result) {header("Location: http://ageru.services/register-complete.php" );}
     }
-?>
+?> -->
 </form>
 
 <p class="return-link"><a href="/register.php">登録画面に戻る</a></p>
