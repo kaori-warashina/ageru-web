@@ -55,20 +55,21 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <dd>
 <dl class="borrow">
 <dt>今借りているアイテムの数</dt>
+<dd>
 <?php
 $result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=0 AND `item_user`=".$user_id);
-if (!$result) {die('クエリーが失敗しました。'.mysql_error());}
-$row = mysql_fetch_assoc($result);
-$item_count = count($row);
-?>
-<dd><?php print($item_count); ?>アイテム</dd>
+if (!$result) {
+die('クエリーが失敗しました。'.mysql_error());
+}
+ $count_item = 0;
+while ($row = mysql_fetch_assoc($result)) {
+ $count_item++;
+ }?>
+<?PHP print($count_item) ?>アイテム</dd>
 </dl>
 <dl class="borrow">
 <dt>今借りれるアイテムの数</dt>
-<dd>
-<?php　$item_count1 = 5 - $item_count;
-print($item_count1);
-?>アイテム</dd>
+<dd><?PHP print(5 - $count_item) ?>アイテム</dd>
 </dl>
 </dd>
 </dl>
@@ -77,6 +78,10 @@ print($item_count1);
 <!-- clothes-information max5 -->
 <ul class="clearfix">
 <?php
+$result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=0 AND `item_user`=".$user_id);
+if (!$result) {
+die('クエリーが失敗しました。'.mysql_error());
+}
 while ($row = mysql_fetch_assoc($result)) {
 ?>
 <li>
