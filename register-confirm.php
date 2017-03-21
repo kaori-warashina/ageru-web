@@ -184,7 +184,7 @@
         </th>
         <td>
             <img src="/image/img_profile.png">
-            <input type="hidden" name="img_profile" value="0">
+            <input type="hidden" name="user_image" value="0">
         </td>
     </tr>
     <tr>
@@ -201,7 +201,7 @@
     </tr>
     <tr>
     <th>
-        <p>ユーザーネーム</p>
+        <p>ユーザーURL</p>
     </th>
     <td>
         <?php
