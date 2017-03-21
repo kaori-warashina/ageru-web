@@ -55,11 +55,14 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <dd>
 <dl class="borrow">
 <dt>今借りているアイテムの数</dt>
-<dd>４アイテム</dd>
+<dd><?php print($item_count); ?>アイテム</dd>
 </dl>
 <dl class="borrow">
 <dt>今借りれるアイテムの数</dt>
-<dd>１アイテム</dd>
+<dd><?php
+$item_count1 = 5 - $item_count;
+print($item_count1);
+?>アイテム</dd>
 </dl>
 </dd>
 </dl>
@@ -72,6 +75,7 @@ $result = mysql_query("SELECT * FROM `item` WHERE `item_request_flg`=0 AND `item
 if (!$result) {
 die('クエリーが失敗しました。'.mysql_error());
 }
+$item_count = count($row);
 while ($row = mysql_fetch_assoc($result)) {
 ?>
 <li>
