@@ -22,8 +22,8 @@
         <p>メールアドレス</p>
     </th>
     <td>
-        <?php print($_POST['mailaddress']);?>
-        <input type="hidden" name="mailaddress" value="<?php echo $_POST['$mailaddress'];?>">
+        <?php print($_REQUEST['mailaddress']);?>
+        <input type="hidden" name="mailaddress" value="<?php echo $_REQUEST['$mailaddress'];?>">
     </td>
 </tr>
 <tr>
@@ -31,8 +31,8 @@
         <p>パスワード</p>
     </th>
     <td>
-        <?php print($_POST['password']);?>
-        <input type="hidden" name="password" value="<?php echo $_POST['$password'];?>">
+        <?php print($_REQUEST['password']);?>
+        <input type="hidden" name="password" value="<?php echo $_REQUEST['$password'];?>">
     </td>
 </tr>
 <tr>
@@ -40,7 +40,7 @@
         <p>パスワード（再入力）</p>
     </th>
     <td>
-        <?php print($_POST['password']);?>
+        <?php print($_REQUEST['password']);?>
     </td>
 </tr>
 </tbody>
@@ -57,8 +57,8 @@
             <p>氏名</p>
         </th>
         <td>
-            <?php print($_POST['user_name_first']);?>
-            <input type="hidden" name="user_name_first" value="<?php echo $_POST['$user_name_first'];?>">
+            <?php print($_REQUEST['user_name_first']);?>
+            <input type="hidden" name="user_name_first" value="<?php echo $_REQUEST['$user_name_first'];?>">
         </td>
     </tr>
     <tr>
@@ -66,8 +66,8 @@
             <p>氏名（フリガナ）</p>
         </th>
         <td>
-            <?php print($_POST['user_name_family']);?>
-            <input type="hidden" name="user_name_family" value="<?php echo $_POST['$user_name_family'];?>">
+            <?php print($_REQUEST['user_name_family']);?>
+            <input type="hidden" name="user_name_family" value="<?php echo $_REQUEST['$user_name_family'];?>">
         </td>
     </tr>
     <tr>
@@ -75,8 +75,8 @@
             <p>ユーザーネーム</p>
         </th>
         <td>
-            <?php print($_POST['user_nickname']);?>
-            <input type="hidden" name="user_nickname" value="<?php echo $_POST['$user_nickname'];?>">
+            <?php print($_REQUEST['user_nickname']);?>
+            <input type="hidden" name="user_nickname" value="<?php echo $_REQUEST['$user_nickname'];?>">
         </td>
     </tr>
     <tr>
@@ -85,7 +85,7 @@
         </th>
         <td>
             <?php 
-            $str= $_POST['city_num_1'].$_POST['city_num_2'];
+            $str= $_REQUEST['city_num_1'].$_REQUEST['city_num_2'];
             print($str);?>
             <input type="hidden" name="city_num" value="<?php echo $str;?>">
         </td>
@@ -95,8 +95,8 @@
             <p>都道府県</p>
         </th>
         <td>
-            <?php print($_POST['user_area']);?>
-            <input type="hidden" name="user_area" value="<?php echo $_POST['$user_area'];?>">
+            <?php print($_REQUEST['user_area']);?>
+            <input type="hidden" name="user_area" value="<?php echo $_REQUEST['$user_area'];?>">
         </td>
     </tr>
     <tr>
@@ -104,8 +104,8 @@
             <p>住所１（市区町村）</p>
         </th>
         <td>
-            <?php print($_POST['address1']);?>
-            <input type="hidden" name="address1" value="<?php echo $_POST['$address1'];?>">
+            <?php print($_REQUEST['address1']);?>
+            <input type="hidden" name="address1" value="<?php echo $_REQUEST['$address1'];?>">
         </td>
     </tr>
     <tr>
@@ -113,8 +113,8 @@
             <p>住所２（番地）</p>
         </th>
         <td>
-           <?php print($_POST['address2']);?>
-           <input type="hidden" name="address2" value="<?php echo $_POST['$address2'];?>">
+           <?php print($_REQUEST['address2']);?>
+           <input type="hidden" name="address2" value="<?php echo $_REQUEST['$address2'];?>">
         </td>
     </tr>
     <tr>
@@ -122,8 +122,8 @@
             <p>住所３（建物名）</p>
         </th>
         <td>
-            <?php print($_POST['address3']);?>
-            <input type="hidden" name="address3" value="<?php echo $_POST['$address3'];?>">
+            <?php print($_REQUEST['address3']);?>
+            <input type="hidden" name="address3" value="<?php echo $_REQUEST['$address3'];?>">
         </td>
     </tr>
     <tr>
@@ -131,8 +131,8 @@
             <p>お電話番号</p>
         </th>
         <td>
-            <?php print($_POST['phone']);?>
-            <input type="hidden" name="phone" value="<?php echo $_POST['$phone'];?>">
+            <?php print($_REQUEST['phone']);?>
+            <input type="hidden" name="phone" value="<?php echo $_REQUEST['$phone'];?>">
         </td>
     </tr>
     <tr>
@@ -140,8 +140,8 @@
             <p>性別</p>
         </th>
         <td>
-            <?php print($_POST['user_sex']);?>
-            <input type="hidden" name="user_sex" value="<?php echo $_POST['$user_sex'];?>">
+            <?php print($_REQUEST['user_sex']);?>
+            <input type="hidden" name="user_sex" value="<?php echo $_REQUEST['$user_sex'];?>">
         </td>
     </tr>
     <tr>
@@ -150,8 +150,8 @@
         </th>
         <td>
             <?php 
-            $str= $_POST['birthday_y'].$_POST['birthday_m'].$_POST['birthday_d'];
-            print($_POST['$str']);?>
+            $str= $_REQUEST['birthday_y'].$_REQUEST['birthday_m'].$_REQUEST['birthday_d'];
+            print($_REQUEST['$str']);?>
             <input type="hidden" name="birthday" value="<?php echo $str;?>">
 
         </td>
@@ -162,14 +162,14 @@
         </th>
         <td>
             <img src="/image/img_profile.png">
-            <input type="hidden" name="img_profile" value="<?php echo $_POST['$img_profile'];?>">
+            <input type="hidden" name="img_profile" value="<?php echo $_REQUEST['$img_profile'];?>">
         </td>
     </tr>
     <tr>
         <th>
             <p>自己紹介</p>
-            <?php print($_POST['user_profile']);?>
-            <input type="hidden" name="user_profile" value="<?php echo $_POST['$user_profile'];?>">
+            <?php print($_REQUEST['user_profile']);?>
+            <input type="hidden" name="user_profile" value="<?php echo $_REQUEST['$user_profile'];?>">
         </th>
         <td>
 
@@ -189,8 +189,8 @@
             <p>身長</p>
         </th>
         <td>
-            <?php print($_POST['height']);?> cm
-            <input type="hidden" name="height" value="<?php echo $_POST['$height'];?>">
+            <?php print($_REQUEST['height']);?> cm
+            <input type="hidden" name="height" value="<?php echo $_REQUEST['$height'];?>">
 
         </td>
     </tr>
@@ -199,8 +199,8 @@
             <p>体重</p>
         </th>
         <td>
-            <?php print($_POST['weight']);?> kg
-            <input type="hidden" name="name" value="<?php echo $_POST['$weight'];?>">
+            <?php print($_REQUEST['weight']);?> kg
+            <input type="hidden" name="name" value="<?php echo $_REQUEST['$weight'];?>">
         </td>
     </tr>
     <tr>
@@ -208,8 +208,8 @@
             <p>愛用ブランド</p>
         </th>
         <td>
-            <?php print($_POST['brand']);?>
-            <input type="hidden" name="brand" value="<?php echo $_POST['$brand'];?>">
+            <?php print($_REQUEST['brand']);?>
+            <input type="hidden" name="brand" value="<?php echo $_REQUEST['$brand'];?>">
         </td>
     </tr>
     <tr>
@@ -217,13 +217,13 @@
             <p>服のサイズ</p>
         </th>
         <td>
-            <?php $body_size_num = intval($_POST['body_size']);
-            $str = $_POST['body_size'];
+            <?php $body_size_num = intval($_REQUEST['body_size']);
+            $str = $_REQUEST['body_size'];
             $search = array('1','2','3','4','5','6');
             $replace = array('SS','S','M','L','XL','other');
             print str_replace($search,$replace,$str);
             ?>
-            <input type="hidden" name="body_size" value="<?php echo $_POST['$body_size'];?>">
+            <input type="hidden" name="body_size" value="<?php echo $body_size_num;?>">
         </td>
     </tr>
     <tr>
@@ -231,8 +231,8 @@
             <p>服の号数</p>
         </th>
         <td class="label-block">
-            <?php print($_POST['clothessize']);?>
-            <input type="hidden" name="clothessize" value="<?php echo $_POST['$clothessize'];?>">
+            <?php print($_REQUEST['clothessize']);?>
+            <input type="hidden" name="clothessize" value="<?php echo $_REQUEST['$clothessize'];?>">
         </td>
     </tr>
     <tr>
@@ -240,8 +240,8 @@
             <p>靴のサイズ</p>
         </th>
         <td>
-            <?php print($_POST['shoesssize']);?> cm
-            <input type="hidden" name="name" value="<?php echo $_POST['$shoesssize'];?>">
+            <?php print($_REQUEST['shoesssize']);?> cm
+            <input type="hidden" name="name" value="<?php echo $_REQUEST['$shoesssize'];?>">
         </td>
     </tr>
     <tr>
@@ -249,12 +249,12 @@
             <p>好きなテイスト</p>
         </th>
         <td class="label-block">
-        <?php $str = $_POST['liketast'];
+        <?php $str = $_REQUEST['liketast'];
         $search = array('1','2','3','4','5','6','7','8');
         $replace = array('フェミニン','カジュアル','ガーリー','モード','コンサバ','ユニセックス','ロック','その他');
         print str_replace($search,$replace,$str);
         ?>
-        <input type="hidden" name="liketast" value="<?php echo $_POST['$liketast'];?>">
+        <input type="hidden" name="liketast" value="<?php echo $_REQUEST['$liketast'];?>">
         </td>
     </tr>
     <tr>
@@ -262,12 +262,12 @@
             <p>苦手テイスト</p>
         </th>
         <td class="label-block">
-        <?php $str = $_POST['disliketast'];
+        <?php $str = $_REQUEST['disliketast'];
         $search = array('1','2','3','4','5','6','7','8');
         $replace = array('フェミニン','カジュアル','ガーリー','モード','コンサバ','ユニセックス','ロック','その他');
         print str_replace($search,$replace,$str);
         ?>
-            <input type="hidden" name="disliketast" value="<?php echo $_POST['$disliketast'];?>">
+            <input type="hidden" name="disliketast" value="<?php echo $_REQUEST['$disliketast'];?>">
         </td>
     </tr>
     <tr>
@@ -275,13 +275,13 @@
             <p>体型</p>
         </th>
         <td class="label-block">
-            <?php $body_type_num = intval($_POST['body_type']);
-            $str = $_POST['body_type'];
+            <?php $body_type_num = intval($_REQUEST['body_type']);
+            $str = $_REQUEST['body_type'];
             $search = array('1','2','3','4');
             $replace = array('やせ型','標準','ぽっちゃり','その他');
             print str_replace($search,$replace,$str);
             ?>
-            <input type="hidden" name="body_type" value="<?php echo $_POST['$body_type'];?>">
+            <input type="hidden" name="body_type" value="<?php echo $_REQUEST['$body_type'];?>">
         </td>
     </tr>
 
@@ -294,7 +294,7 @@
 </div>
 </div> <!-- register-content -->
 <?php
-    if (isset($_POST["registerbutton"])) {
+    if (isset($_REQUEST["registerbutton"])) {
         $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
         if (!$link) {
         die('接続失敗です。'.mysql_error());
@@ -304,7 +304,7 @@
         die('データベース選択失敗です。'.mysql_error());
         }
         mysql_set_charset('utf8');
-        $result = mysql_query("INSERT INTO `ageru_web`.`user_master` (`user_id`, `mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `clothessize`, `shoesssize`, `rent_item1`, `rent_item2`, `rent_item3`, `rent_item4`, `rent_item5`) VALUES (NULL, '$_POST['mailaddress']', '$_POST['password']', '$_POST['user_name_first']', '$_POST['user_name_family']', '$_POST['user_nickname']', '$_POST['user_image']', '$_POST['user_profile']', '$_POST['user_url']', '$_POST['user_birthday']', '$_POST['user_sex']', '$_POST['user_area']', '$_POST['city_num']', '$_POST['address1']', '$_POST['address2']', '$_POST['address3']', '$_POST['phone']','.$body_type_num.', '.$body_size_num.', '$_POST['liketast']', '$_POST['disliketast']', '$_POST['brand']', '$_POST['height']', '$_POST['weight']', '$_POST['clothessize']', '$_POST['shoesssize']', NULL, NULL, NULL, NULL, NULL)");
+        $result = mysql_query("INSERT INTO `ageru_web`.`user_master` (`user_id`, `mailaddress`, `password`, `user_name_first`, `user_name_family`, `user_nickname`, `user_image`, `user_profile`, `user_url`, `user_birthday`, `user_sex`, `user_area`, `city_num`, `address1`, `address2`, `address3`, `phone`, `body_type`, `body_size`, `liketast`, `disliketast`, `brand`, `height`, `weight`, `clothessize`, `shoesssize`, `rent_item1`, `rent_item2`, `rent_item3`, `rent_item4`, `rent_item5`) VALUES (NULL, '$_REQUEST['mailaddress']', '$_REQUEST['password']', '$_REQUEST['user_name_first']', '$_REQUEST['user_name_family']', '$_REQUEST['user_nickname']', '$_REQUEST['user_image']', '$_REQUEST['user_profile']', '$_REQUEST['user_url']', '$_REQUEST['user_birthday']', '$_REQUEST['user_sex']', '$_REQUEST['user_area']', '$_REQUEST['city_num']', '$_REQUEST['address1']', '$_REQUEST['address2']', '$_REQUEST['address3']', '$_REQUEST['phone']','$body_type_num', '$body_size_num', '$_REQUEST['liketast']', '$_REQUEST['disliketast']', '$_REQUEST['brand']', '$_REQUEST['height']', '$_REQUEST['weight']', '$_REQUEST['clothessize']', '$_REQUEST['shoesssize']', NULL, NULL, NULL, NULL, NULL)");
         if (!$result) {
           exit('データを登録できませんでした。<p class="return-link"><a href="/register.php">登録画面に戻る</a></p><br><br>'.mysql_error());
         }

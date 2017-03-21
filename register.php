@@ -334,6 +334,7 @@ include 'header.php';?>
         <label><input type="radio" name="body_size" value="3"> M</label>
         <label><input type="radio" name="body_size" value="4"> L</label>
         <label><input type="radio" name="body_size" value="5"> XL</label>
+        <label><input type="radio" name="body_size" value="6"> other</label>
     </td>
 </tr>
 <tr>
