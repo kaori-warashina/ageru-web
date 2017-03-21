@@ -81,9 +81,9 @@ include 'header.php';?>
         <p>郵便番号</p>
     </th>
     <td>
-        <input type="text" name="city_num" maxlength='3' class="text-short">
+        <input type="text" name="city_num_1" maxlength='3' class="text-short">
         <span>-</span>
-        <input type="text" name="city_num" maxlength='4' class="text-middium">
+        <input type="text" name="city_num_2" maxlength='4' class="text-middium">
     </td>
 </tr>
 <tr>
@@ -277,7 +277,17 @@ include 'header.php';?>
         <label for="file_photo" class="file-photo">ファイルを選択
             <input type="file" id="file_photo" style="display:none;">
         </label>
+        
         <span>選択されていません</span>
+    </td>
+</tr>
+
+<tr>
+    <th>
+        <p>ユーザーURL</p>
+    </th>
+    <td>
+        <input type="text" name="user_url" class="text">
     </td>
 </tr>
 <!-- <tr>
