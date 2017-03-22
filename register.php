@@ -180,7 +180,7 @@ include 'header.php';?>
         <p>性別</p>
     </th>
     <td>
-        <label><input type="radio" name="user_sex" value="2"> 男性</label>
+        <label><input type="radio" name="user_sex" value="0"> 男性</label>
         <label><input type="radio" name="user_sex" value="1"> 女性</label>
     </td>
 </tr>

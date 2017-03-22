@@ -161,9 +161,11 @@
         </th>
         <td>
             <?php
-            $user_sex=intval($_REQUEST[user_sex]);
-             print($_REQUEST[user_sex]);?>
-            <input type="hidden" name="user_sex" value="<?php echo $user_sex;?>">
+            $str = $_REQUEST[user_sex];
+            $search = array('0','1');
+            $replace = array('男','女');
+            print str_replace($search,$replace,$str);?>
+            <input type="hidden" name="user_sex" value="<?php echo $str;?>">
         </td>
     </tr>
     <tr>
@@ -174,7 +176,7 @@
             <?php 
             $str=intval($_REQUEST[birthday_y].$_REQUEST[birthday_m].$_REQUEST[birthday_d]);
             print($str);?>
-            <input type="hidden" name="birthday" value="<?php echo $str;?>">
+            <input type="hidden" name="user_birthday" value="<?php echo $str;?>">
 
         </td>
     </tr>
@@ -239,7 +241,7 @@
             <?php
             $weight=intval($_REQUEST[weight]);
              print($_REQUEST[weight]);?> kg
-            <input type="hidden" name="name" value="<?php echo $weight;?>">
+            <input type="hidden" name="weight" value="<?php echo $weight;?>">
         </td>
     </tr>
     <tr>
@@ -286,7 +288,7 @@
             <?php
             $shoesssize=intval($_REQUEST[shoesssize]);
              print($_REQUEST[shoesssize]);?> cm
-            <input type="hidden" name="name" value="<?php echo $shoesssize;?>">
+            <input type="hidden" name="shoesssize" value="<?php echo $shoesssize;?>">
         </td>
     </tr>
     <tr>
