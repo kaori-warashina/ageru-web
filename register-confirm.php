@@ -185,8 +185,22 @@
             <p>プロフィール画像</p>
         </th>
         <td>
-            <img src="/image/img_profile.png">
-            <input type="hidden" name="user_image" value="0">
+            <?php
+            if (is_uploaded_file($_FILES["user_image"]["tmp_name"])) {
+            if (move_uploaded_file($_FILES["user_image"]["tmp_name"], "user_media/" . $_FILES["user_image"]["name"])) {
+            chmod("user_media/" . $_FILES["user_image"]["name"], 0644);
+            } else {
+            echo "ファイルをアップロードできません。";
+            }
+            } else {
+            echo "ファイルが選択されていません。";
+            }
+            ?>
+            <?php
+            $user_image=$_FILES["user_image"]["name"];
+             print($_FILES["user_image"]["name"]);?>
+            <img src="/user_media/<?php echo $user_image; ?>">
+            <input type="hidden" name="user_image" value="<?php echo $user_image;?>">
         </td>
     </tr>
     <tr>

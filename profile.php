@@ -49,7 +49,7 @@ $row = mysql_fetch_assoc($result)
 <div class="myprofile-content">
 <h2>プロフィール</h2>
 <div class="page-content">
-    <form class="form-profile" action="register-confirm.php" method="post">
+    <form class="form-profile" action="profile_edit.php" method="post" enctype="multipart/form-data">
         <table>
             <tbody>
                 <tr>
@@ -69,10 +69,7 @@ $row = mysql_fetch_assoc($result)
                     <td>
                        <?php echo '<img src="/user_media/'.$row['user_image'].'">'?>
                         <br>
-                        <label for="file_photo" class="file-photo">ファイルを選択
-                            <input type="file" id="file_photo" style="display:none;">
-                        </label>
-                        <span>選択されていません</span>
+                        <span><input type="file" name="user_image" size="30" id="file_photo"/></span>
                     </td>
                 </tr>
                 <tr>
@@ -181,7 +178,7 @@ $row = mysql_fetch_assoc($result)
                     <td>
                         <select class="sex-profile" name="user_sex">
                             <option value="option" selected="selected">----</option>
-                            <option value="2">男性</option>
+                            <option value="0">男性</option>
                             <option value="1">女性</option>
                         </select>
                     </td>
@@ -246,7 +243,7 @@ $row = mysql_fetch_assoc($result)
             </tbody>
         </table>
         <div class="change-profile">
-            <button type="button" type="submit" name="button">変更する</button>
+            <button type="submit" name="button">変更する</button>
         </div>
     </form>
 </div> <!-- page-content -->

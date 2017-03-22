@@ -13,7 +13,7 @@ include 'header.php';?>
 <div class="arrow-width">
 <div class="register-content">
 <div class="login-register">
-<form class="form-register" action="register-confirm.php" method="post"  >
+<form class="form-register" action="register-confirm.php" method="post" enctype="multipart/form-data" >
 <div class="form-register">
 <table>
 <tbody>
@@ -274,11 +274,7 @@ include 'header.php';?>
     <td>
         <img src="/image/img_profile.png">
         <br>
-        <label for="file_photo" class="file-photo">ファイルを選択
-            <input type="file" id="file_photo" style="display:none;">
-        </label>
-        
-        <span>選択されていません</span>
+        <span><input type="file" name="user_image" size="30" id="file_photo"/><br /></span>
     </td>
 </tr>
 
