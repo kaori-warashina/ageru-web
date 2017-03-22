@@ -84,14 +84,25 @@ document.getElementById("txt").innerHTML=txt;
         <ul class="clearfix">
 
 <?php echo '<li><a href="#"><img src="/media/'.$row['item_image1'].'"></a></li>';
-if (isset($row['item_image2'])) {
-print'<li><a href="#"><img src="/media/'.$row['item_image2'].'"></a></li>';
-}
-if (isset($row['item_image3'])) {
-print'<li><a href="#"><img src="/media/'.$row['item_image3'].'"></a></li>';
-}
+	if (isset($row['item_image2'])) {
+		print'<li><a href="#"><img src="/media/'.$row['item_image2'].'"></a></li>';
+	}
+	if (isset($row['item_image3'])) {
+		print'<li><a href="#"><img src="/media/'.$row['item_image3'].'"></a></li>';
+	}
 ?>
-<li><button type="button" name="img_add_button"><img src="/image/img_add.png"></button></li>
+<?php $result = mysql_query("SELECT * FROM `item_image` WHERE `item_id`=".$_GET[item_id]);
+if (!$result) {die('クエリーが失敗しました。'.mysql_error());}
+while ($row = mysql_fetch_assoc($result)) { ?>
+	<li><?php echo '<li><a href="#"><img src="/media/'.$row['upfilename'].'"></a></li>'; ?></li>
+<?php }?>
+<li>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="upfile" size="30" />
+  <input type="hidden" name="item_id" value="<?php echo $_GET[item_id]; ?>"/>
+  <button type="button" name="img_add_button"><img src="/image/img_add.png"></button>
+</form>
+</li>
         </ul>
     </div>
 
@@ -118,14 +129,14 @@ while ($row = mysql_fetch_assoc($result)) {
 </div>
 <?php }?>
 
-<div class="comment-write">
-<p>コメントを投稿する</p>
-<form class="form-block" action="" method="post">
+<div class="comment-write"><p>コメントを投稿する</p>
+<form class="form-block" action="detail.php" method="post">
 <textarea name="comment_text" rows="" cols=""></textarea>
 </div>
 <div class="comment-sent">
 <button type="submit" name="comment" ">投稿する</button>
-<!-- <?php echo $_SERVER['QUERY_STRING'];?> -->
+</form></div>
+
 <?php
     if (isset($_POST["comment"])) {
         $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
@@ -140,16 +151,13 @@ while ($row = mysql_fetch_assoc($result)) {
         $item_id = $_GET[item_id];
         $comment_text   = $_REQUEST['comment_text'];
         $user_id = $_SESSION['user_id'];
-        $result = mysql_query("INSERT INTO comment( `comment_item_id`, `user_id`, `comment_text`) VALUES('".$item_id."', '".$user_id."', '".$comment_text."')");
+        $result = mysql_query("INSERT INTO comment( `comment_item_id`, `user_id`, `comment_text`) VALUES('$item_id', '$user_id', '$comment_text');");
         if (!$result) {
           exit('データを登録できませんでした。'.mysql_error());
-        }elseif ($result) {
-        header("Location: " . $_SERVER['PHP_SELF']);
         }
     }
 ?>
-</form>
-</div>
+
 </div> <!-- comment-content -->
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
