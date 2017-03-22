@@ -34,7 +34,7 @@ $row = mysql_fetch_assoc($result)
 <aside class="sidebar">
 <div class="sider-top">
     <div class="user-image-name">
-        <img src="/image/img_dummy04.png">
+        <?php print' <img src="/user_media/'.$row['user_image'].'">'?>
         <p><?php echo $row['user_nickname']?></p>
     </div>
 </div>
@@ -80,7 +80,7 @@ $row = mysql_fetch_assoc($result)
                         <label>自己紹介</label>
                     </th>
                     <td>
-                        <textarea name="message" class="selfintroduction-profile" ><?php echo $row['user_profile']?></textarea>
+                        <textarea name="user_profile" class="selfintroduction-profile" ><?php echo $row['user_profile']?></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -88,7 +88,7 @@ $row = mysql_fetch_assoc($result)
                         <label>外部サイトURL</label>
                     </th>
                     <td>
-                        <input type="text" name="user_url" placeholder="ブログ、ホームページなどのURL" class="outside-url" value="<?php echo $row['message']?>">
+                        <input type="text" name="user_url" placeholder="ブログ、ホームページなどのURL" class="outside-url" value="<?php echo $row['user_url']?>">
                     </td>
                 </tr>
                 <tr>

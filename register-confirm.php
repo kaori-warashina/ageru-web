@@ -150,7 +150,7 @@
         </th>
         <td>
             <?php
-            $phone=intval(_REQUEST[phone]);
+            $phone=intval($_REQUEST[phone]);
              print($_REQUEST[phone]);?>
             <input type="hidden" name="phone" value="<?php echo $phone;?>">
         </td>
@@ -175,7 +175,7 @@
         <td>
             <?php 
             $str=intval($_REQUEST[birthday_y].$_REQUEST[birthday_m].$_REQUEST[birthday_d]);
-            print($str);?>
+            print($_REQUEST[birthday_y]."年".$_REQUEST[birthday_m]."月".$_REQUEST[birthday_d]."日");?>
             <input type="hidden" name="user_birthday" value="<?php echo $str;?>">
 
         </td>

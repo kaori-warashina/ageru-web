@@ -36,7 +36,7 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <tbody>
 <tr>
 <th>身長</th>
-<td><?php print$row['body_type']?></td>
+<td><?php print$row['height']?></td>
 </tr>
 <tr>
 <th>愛用ブランド</th>
@@ -45,7 +45,7 @@ print'<li><a href="#'.$row[user_id].'">'.$row[user_nickname].'</a></li>';
 <tr>
 <th>服のサイズ</th>
 <td><?php 
-$str = $row['item_size_name'];
+$str = $row['body_size'];
 $search = array('1','2','3','4','5','6');
 $replace = array('SS','S','M','L','XL','other');
 print str_replace($search,$replace,$str);
@@ -54,7 +54,7 @@ print str_replace($search,$replace,$str);
 </tr>
 <tr>
 <th>服の号数</th>
-<td><?php print$row['item_size_name']?></td>
+<td><?php print$row['clothessize']?></td>
 </tr>
 <tr>
 <th>靴のサイズ</th>
@@ -142,10 +142,12 @@ document.getElementById("txt").innerHTML=txt;
 }
 -->
 </script>
+
+
 <form action="flg_change.php" method="post">
 <input type="hidden" name="item_id" value="<?php print($row['item_id']); ?>">
 <input type="hidden" name="userid" value="<?php $user_id ?>">
-<button type="button" method="post" name="flg_change_button" value="1" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
+<button type="submit" method="post" name="flg_change_button" value="1" class="request-userpage"><div id="txt"><img src="/image/ageru_like.png" width="18" height="15">リクエスト</div></button>
 </form>
 </div>
 </div> <!-- clothes-information -->

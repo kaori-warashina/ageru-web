@@ -53,7 +53,6 @@
     }
 	$row = mysql_fetch_assoc($result);
 ?>
-<?php echo$result?>
     <p class="co-p">登録が完了しました。</p>
     <p class="return-link home"><a href="/login.php">ログインへ</a></p>
 
