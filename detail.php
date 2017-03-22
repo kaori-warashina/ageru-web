@@ -94,11 +94,11 @@ document.getElementById("txt").innerHTML=txt;
 <?php $result = mysql_query("SELECT * FROM `item_image` WHERE `item_id`=".$_GET[item_id]);
 if (!$result) {die('クエリーが失敗しました。'.mysql_error());}
 while ($row = mysql_fetch_assoc($result)) { ?>
-	<li><?php echo '<li><a href="#"><img src="/media/'.$row['upfilename'].'"></a></li>'; ?></li>
+	<li><?php echo '<a href="#"><img src="/files/'.$row['upfilename'].'"></a>'; ?></li>
 <?php }?>
 <li>
 <form action="upload.php" method="post" enctype="multipart/form-data">
-  <input type="file" name="upfile" size="30" />
+  <input type="file" name="upfile" size="10" />
   <input type="hidden" name="item_id" value="<?php echo $_GET[item_id]; ?>"/>
   <button type="submit" name="img_add_button"><img src="/image/img_add.png"></button>
 </form>
@@ -130,7 +130,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php }?>
 
 <div class="comment-write"><p>コメントを投稿する</p>
-<form class="form-block" action="detail.php?item_id=<?php echo $_GET[item_id]; ?>" method="post">
+<form class="form-block" action="detail.php" method="post">
 <textarea name="comment_text" rows="" cols=""></textarea>
 </div>
 <div class="comment-sent">
