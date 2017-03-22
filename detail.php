@@ -100,7 +100,7 @@ while ($row = mysql_fetch_assoc($result)) { ?>
 <form action="upload.php" method="post" enctype="multipart/form-data">
   <input type="file" name="upfile" size="30" />
   <input type="hidden" name="item_id" value="<?php echo $_GET[item_id]; ?>"/>
-  <button type="button" name="img_add_button"><img src="/image/img_add.png"></button>
+  <button type="submit" name="img_add_button"><img src="/image/img_add.png"></button>
 </form>
 </li>
         </ul>
@@ -130,7 +130,7 @@ while ($row = mysql_fetch_assoc($result)) {
 <?php }?>
 
 <div class="comment-write"><p>コメントを投稿する</p>
-<form class="form-block" action="detail.php" method="post">
+<form class="form-block" action="detail.php?item_id=<?php echo $_GET[item_id]; ?>" method="post">
 <textarea name="comment_text" rows="" cols=""></textarea>
 </div>
 <div class="comment-sent">
