@@ -15,7 +15,7 @@ echo "ファイルが選択されていません。";
 }
 
 $user_image=$_FILES["user_image"]["name"];
-print($_FILES["user_image"]["name"]);
+
 $link = mysql_connect("localhost", "root", "m4cRavuMaCaf", "ageru_web");
 if (!$link) {
 die('接続失敗です。'.mysql_error());
@@ -30,7 +30,7 @@ $comment_text   = $_REQUEST['comment_text'];
 $user_id = $_SESSION['user_id'];
 $user_area   = $_REQUEST['user_area'];
 $user_birthday   = $_REQUEST['user_birthday'];
-$user_image   = $_REQUEST['user_image'];
+$user_image   = $_FILES["user_image"]["name"];
 $user_profile   = $_REQUEST['user_profile'];
 $user_url   = $_REQUEST['user_url'];
 
@@ -42,6 +42,7 @@ if (!$result) {
 ?>
 
 </div> <!-- comment-content -->
-
+    <p class="co-p">更新が完了しました。</p>
+    <p class="return-link home"><a href="/mypage.php">マイページへ</a></p><br><br>
 </div> <!-- bottom-content -->
 <?php include 'footer.php';?>
